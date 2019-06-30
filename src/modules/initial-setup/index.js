@@ -1,21 +1,21 @@
-import React, { Component } from 'react'
+import React, { useEffect } from 'react'
 import { View } from 'react-native'
 
 import LoadingIndicator from '../../components/loading-indicator'
 import Navigation from '../../services/navigation'
 import styles from './styles'
 
-export default class InitialSetup extends Component {
-  componentDidMount() {
-    this.props.initialSetup();
-    Navigation.setRef(this.props.navigation);
-  }
+const InitialSetup = (props) => {
+  useEffect(() => {
+    props.initialSetup();
+    Navigation.setRef(props.navigation);
+  }, []);
 
-  render() {
-    return (
-      <View style={styles.base}>
-        <LoadingIndicator isLoading={true} />
-      </View>
-    );
-  }
-}
+  return (
+    <View style={styles.base}>
+      <LoadingIndicator isLoading={true} />
+    </View>
+  )
+};
+
+export default InitialSetup
