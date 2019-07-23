@@ -13,6 +13,11 @@ const initialSetup = (navigationRef) => (dispatch) => {
   }
 }
 
+const setNavigationState = (payload) => (dispatch) => {
+  dispatch(appAC.setNavigationState(payload));
+}
+
 export default {
-  initialSetup
+  initialSetup,
+  setNavigationState
 }

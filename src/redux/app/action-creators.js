@@ -1,4 +1,4 @@
-import { asyncActionCreator } from 'reddeck'
+import { actionCreator, asyncActionCreator } from 'reddeck'
 import appTypes from './types'
 
 const initialSetup = asyncActionCreator(
@@ -7,6 +7,9 @@ const initialSetup = asyncActionCreator(
   appTypes.INITIAL_SETUP_ERROR
 )
 
+const setNavigationState = actionCreator(appTypes.SET_NAV_STATE)
+
 export default {
-  initialSetup
+  initialSetup,
+  setNavigationState
 }

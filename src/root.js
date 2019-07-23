@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 import { View, StyleSheet } from 'react-native'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import appActions from './redux/app/actions'
 
 import { getActiveRouteName, getActiveTab } from './navigator/utils'
 import RootNavigator from './navigator'
@@ -10,9 +13,10 @@ const styles = StyleSheet.create({
   }
 })
 
-export default class Root extends Component {
+class Root extends Component {
   constructor(props) {
     super(props);
+    this.onNavigationStateChange = this.onNavigationStateChange.bind(this)
     console.disableYellowBox = true;
   }
 
@@ -25,9 +29,12 @@ export default class Root extends Component {
       return
     }
 
-    console.log('currentScreen', currentScreen);
-    console.log('prevScreen', prevScreen);
-    console.log('currentTab', currentTab);
+    this.props.setNavigationState({
+      current_tab: currentTab.name,
+      current_tab_index: currentTab.index,
+      current_screen: currentScreen,
+      prev_screen: prevScreen
+    });
   }
 
   render() {
@@ -38,3 +45,9 @@ export default class Root extends Component {
     );
   }
 }
+
+const mapDispatchToProps = (dispatch) => bindActionCreators({
+  setNavigationState: appActions.setNavigationState
+}, dispatch)
+
+export default connect(null, mapDispatchToProps)(Root)
