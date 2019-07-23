@@ -100,3 +100,6 @@ ios/*.jsbundle
 ios/*.jsbundle.map
 android/*.jsbundle
 android/*.jsbundle.map
+
+ios/GoogleService-Info.plist
+android/app/google-services.json
