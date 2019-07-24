@@ -5,7 +5,8 @@ import styles from './styles'
 
 export default class Timetable extends Component {
   static navigationOptions = {
-    title: 'Timetable'
+    title: 'Timetable',
+    header: null
   }
 
   render() {

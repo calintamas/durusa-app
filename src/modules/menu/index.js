@@ -5,7 +5,8 @@ import styles from './styles'
 
 export default class Menu extends Component {
   static navigationOptions = {
-    title: 'Menu'
+    title: 'Menu',
+    header: null
   }
 
   render() {
