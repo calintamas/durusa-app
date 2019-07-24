@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native'
 
-const SIZE = 22;
+const SIZE = 20;
 export default StyleSheet.create({
   base: {
     padding: 15

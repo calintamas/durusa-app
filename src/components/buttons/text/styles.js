@@ -4,7 +4,11 @@ import { colors } from '../../../styles'
 export default StyleSheet.create({
   base: {
     flexDirection: 'row',
-    alignItems: 'center'
+    alignItems: 'center',
+    justifyContent: 'flex-start',
+    padding: 5,
+    paddingLeft: 0,
+    alignSelf: 'flex-start'
   },
   text: {
     fontSize: 11,

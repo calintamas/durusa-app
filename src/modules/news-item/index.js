@@ -1,16 +1,20 @@
 import React, { Component } from 'react'
-import { View, ScrollView, Text } from 'react-native'
+import { View, ScrollView, Text, Share } from 'react-native'
 import { SafeAreaView } from 'react-navigation'
 
+import ShareButton from '../../components/buttons/share'
 import styles from './styles'
 
 export default class NewsItem extends Component {
   static navigationOptions = ({ navigation }) => ({
-    title: `${navigation.state.params.data.title}`
+    title: `${navigation.state.params.data.title}`,
+    headerRight: <ShareButton onPress={navigation.state.params.onSharePress} />
   })
 
   constructor(props) {
     super(props);
+    this.onSharePress = this.onSharePress.bind(this);
+
     this.state = {
       data: {
         title: '',
@@ -21,8 +25,31 @@ export default class NewsItem extends Component {
 
   componentDidMount() {
     const data = this.props.navigation.getParam('data', {});
-    this.setState({ data })
-    console.log('data', data);
+    this.setState({ data });
+
+    this.props.navigation.setParams({ onSharePress: this.onSharePress });
+  }
+
+  onSharePress() {
+    const data = this.state.data;
+
+    const content = {
+      message: data.text,
+      title: `Durusa | ${data.title}`
+    };
+
+    const options = {
+      // Android only:
+      dialogTitle: content.title,
+      // iOS only:
+      subject: content.title,
+      excludedActivityTypes: [
+        'com.apple.UIKit.activity.AirDrop',
+        'com.apple.UIKit.activity.AddToReadingList'
+      ]
+    };
+
+    Share.share(content, options);
   }
 
   render() {
