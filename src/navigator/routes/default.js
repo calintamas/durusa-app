@@ -5,6 +5,7 @@ import HomeTab from './tabs/home'
 import TimetableTab from './tabs/timetable'
 import MenuTab from './tabs/menu'
 import TabIcon from '../../components/tab-icon'
+import { tabBarOnPress } from '../utils'
 import { colors } from '../../styles'
 
 const options = {
@@ -22,7 +23,8 @@ const DefaultNavigator = createBottomTabNavigator({
   Home: {
     screen: HomeTab,
     navigationOptions: ({ navigation }) => ({
-      tabBarIcon: ({ focused }) => <TabIcon type='home' isFocused={focused} />
+      tabBarIcon: ({ focused }) => <TabIcon type='home' isFocused={focused} />,
+      tabBarOnPress
     })
   },
   Timetable: {

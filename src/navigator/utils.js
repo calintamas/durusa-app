@@ -1,3 +1,6 @@
+import store from '../redux/store'
+import appSelectors from '../redux/app/selectors'
+
 const getActiveRouteName = (navigationState) => {
   if (!navigationState) {
     return null
@@ -39,7 +42,48 @@ const getActiveTab = (navigationState) => {
   })
 }
 
+const scrollTabToTop = (navigation) => {
+  try {
+    const index = navigation.state.index;
+    if (index !== 0) {
+      throw new Error('Not the first screen in stack')
+    }
+
+    const route = navigation.state.routes[index];
+    const routeName = route.routeName;
+
+    const currentBottomTab = appSelectors.getCurrentBottomTab(store.getState());
+    if (routeName !== currentBottomTab) {
+      throw new Error('Active route is not on the current tab')
+    }
+
+    route.params[`${route.routeName}_ScrollViewRef`].scrollToOffset({ offset: 0 })
+  } catch (err) {
+    // silently fail
+  }
+}
+
+const tabBarOnPress = ({ navigation, defaultHandler }) => {
+  scrollTabToTop(navigation);
+  defaultHandler();
+}
+
+function setScrollViewRef(ref, options = {}) {
+  const prefix = options.prefix || '';
+  const refKey = `${prefix}_ScrollViewRef`;
+  if (this[refKey]) {
+    return
+  }
+
+  this[refKey] = ref;
+  this.props.navigation.setParams({
+    [refKey]: ref
+  })
+}
+
 export {
   getActiveRouteName,
-  getActiveTab
+  getActiveTab,
+  tabBarOnPress,
+  setScrollViewRef
 }

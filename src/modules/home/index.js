@@ -6,6 +6,7 @@ import { apiStateCreator } from 'reddeck'
 import NewsCard from '../../components/news-card'
 import { images } from '../../assets'
 import { Firestore } from '../../services/firebase'
+import { setScrollViewRef } from '../../navigator/utils'
 import styles from './styles'
 
 export default class Home extends Component {
@@ -21,6 +22,8 @@ export default class Home extends Component {
     this.onRefresh = this.onRefresh.bind(this);
     this.getData = this.getData.bind(this);
     this.setData = this.setData.bind(this);
+    this.onCardPress = this.onCardPress.bind(this);
+    this.setScrollViewRef = this.setScrollViewRef.bind(this);
 
     this.state = {
       data: [],
@@ -47,7 +50,8 @@ export default class Home extends Component {
         title={item.title}
         text={item.text}
         image={item.photo_url}
-        date={item.date} />
+        date={item.date}
+        onPress={() => this.onCardPress(item)} />
     )
   }
 
@@ -90,12 +94,23 @@ export default class Home extends Component {
     })
   }
 
+  onCardPress(item) {
+    this.props.navigation.navigate('NewsItem', {
+      data: item
+    })
+  }
+
+  setScrollViewRef(ref) {
+    setScrollViewRef.call(this, ref, { prefix: 'Home' })
+  }
+
   render() {
     const data = this.state.data;
 
     return (
       <SafeAreaView style={styles.base}>
         <FlatList
+          ref={this.setScrollViewRef}
           contentContainerStyle={styles.contentContainer}
           data={data}
           keyExtractor={this.keyExtractor}
