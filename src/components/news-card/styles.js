@@ -7,7 +7,6 @@ export default StyleSheet.create({
     backgroundColor: colors.darkGray,
     padding: 15,
     borderRadius: 4,
-    // height: 110,
     overflow: 'hidden'
   },
   contentContainer: {

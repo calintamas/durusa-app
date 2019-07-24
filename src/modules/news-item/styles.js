@@ -5,5 +5,18 @@ export default StyleSheet.create({
   base: {
     flex: 1,
     backgroundColor: colors.black
+  },
+  contentContainer: {
+    padding: 15
+  },
+  textContainer: {
+    padding: 15,
+    paddingVertical: 30,
+    borderRadius: 4,
+    backgroundColor: colors.darkGray
+  },
+  text: {
+    color: colors.white,
+    fontSize: 14
   }
 })
