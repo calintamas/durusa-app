@@ -1,5 +1,10 @@
 const icons = {
+  right_arrow_pink: require('./icons/right-arrow-pink.png'),
+  right_arrow_yellow: require('./icons/right-arrow-yellow.png')
+}
 
+const images = {
+  logo: require('./images/logo.png')
 }
 
 const tabBarIcons = {
@@ -13,5 +18,6 @@ const tabBarIcons = {
 
 export {
   icons,
+  images,
   tabBarIcons
 }

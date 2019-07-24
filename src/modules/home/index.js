@@ -1,7 +1,10 @@
 import React, { Component } from 'react'
-import { View, Text } from 'react-native'
+import { View, Image, FlatList } from 'react-native'
+import { SafeAreaView } from 'react-navigation'
 import { apiStateCreator } from 'reddeck'
 
+import NewsCard from '../../components/news-card'
+import { images } from '../../assets'
 import { Firestore } from '../../services/firebase'
 import styles from './styles'
 
@@ -14,6 +17,10 @@ export default class Home extends Component {
   constructor(props) {
     super(props);
     this.onCollectionUpdate = this.onCollectionUpdate.bind(this);
+    this.renderItem = this.renderItem.bind(this);
+    this.onRefresh = this.onRefresh.bind(this);
+    this.getData = this.getData.bind(this);
+    this.setData = this.setData.bind(this);
 
     this.state = {
       data: [],
@@ -30,7 +37,51 @@ export default class Home extends Component {
     this.unsubscribe();
   }
 
+  keyExtractor(item, index) {
+    return `${index}`
+  }
+
+  renderItem({ item, index }) {
+    return (
+      <NewsCard
+        title={item.title}
+        text={item.text}
+        image={item.photo_url}
+        date={item.date} />
+    )
+  }
+
+  renderHeader() {
+    return (
+      <View style={styles.logoContainer}>
+        <Image
+          style={styles.logo}
+          source={images.logo}
+          resizeMode='contain' />
+      </View>
+    )
+  }
+
+  renderItemSeparator() {
+    return (
+      <View style={styles.separator} />
+    )
+  }
+
   onCollectionUpdate(querySnapshot) {
+    this.setData(querySnapshot);
+  }
+
+  onRefresh() {
+    this.getData();
+  }
+
+  async getData() {
+    const querySnapshot = await this.firestoreRef.get();
+    this.setData(querySnapshot);
+  }
+
+  setData(querySnapshot) {
     let data = [];
     querySnapshot.forEach((doc) => data.push(doc.data()));
     this.setState({
@@ -42,18 +93,18 @@ export default class Home extends Component {
   render() {
     const data = this.state.data;
 
-    console.log('this.state', this.state);
-
     return (
-      <View style={styles.base}>
-        {
-          data.map((item, index) => {
-            return (
-              <Text key={index}>{item.title}</Text>
-            )
-          })
-        }
-      </View>
-    );
+      <SafeAreaView style={styles.base}>
+        <FlatList
+          contentContainerStyle={styles.contentContainer}
+          data={data}
+          keyExtractor={this.keyExtractor}
+          renderItem={this.renderItem}
+          ListHeaderComponent={this.renderHeader}
+          ItemSeparatorComponent={this.renderItemSeparator}
+          refreshing={this.state.api.pending}
+          onRefresh={this.onRefresh} />
+      </SafeAreaView>
+    )
   }
 }
