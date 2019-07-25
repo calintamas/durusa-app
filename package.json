@@ -7,7 +7,8 @@
     "test": "jest",
     "lint": "eslint src",
     "lint-staged": "lint-staged",
-    "menu": "adb shell input keyevent KEYCODE_MENU"
+    "menu": "adb shell input keyevent KEYCODE_MENU",
+    "postinstall": "npx jetify"
   },
   "lint-staged": {
     "**/*.js": [
@@ -45,6 +46,7 @@
     "eslint-plugin-react-native": "^3.7.0",
     "husky": "^2.7.0",
     "jest": "24.8.0",
+    "jetifier": "^1.6.3",
     "lint-staged": "^8.2.1",
     "metro-react-native-babel-preset": "0.54.1",
     "react-test-renderer": "16.8.3",
