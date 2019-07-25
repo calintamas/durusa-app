@@ -6,5 +6,8 @@ export default StyleSheet.create({
   base: {
     flex: 1,
     backgroundColor: colors.black
+  },
+  separator: {
+    height: 25
   }
 })

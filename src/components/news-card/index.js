@@ -1,7 +1,7 @@
 import React from 'react'
 import { View, TouchableOpacity, Text } from 'react-native'
-import moment from 'moment'
 
+import Time from '../../services/time'
 import ReadMoreButton from './read-more-button'
 import SquareImage from '../square-image'
 import styles from './styles'
@@ -13,7 +13,7 @@ const NewsCard = (props) => {
       onPress={props.onPress}>
 
       <View style={styles.contentContainer}>
-        <Text style={styles.dateText}>{moment(props.date).calendar()}</Text>
+        <Text style={styles.dateText}>{Time.getRelativeDate(props.date)}</Text>
         <Text style={styles.title}>{props.title}</Text>
         <Text
           style={styles.text}
