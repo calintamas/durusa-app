@@ -7,6 +7,9 @@ export default StyleSheet.create({
     flex: 1,
     backgroundColor: colors.black
   },
+  rowsContainer: {
+    paddingTop: 55
+  },
   separator: {
     height: 25
   }

@@ -1,4 +1,6 @@
 import { StyleSheet } from 'react-native'
+import { ifIphoneX } from 'react-native-iphone-x-helper'
+
 import { colors } from '../../styles'
 
 export default StyleSheet.create({
@@ -17,8 +19,8 @@ export default StyleSheet.create({
   },
   dotContainer: {
     position: 'absolute',
-    bottom: 11,
     left: 0,
-    right: 0
+    right: 0,
+    ...ifIphoneX({ bottom: 45 }, { bottom: 11 })
   }
 })

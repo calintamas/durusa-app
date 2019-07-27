@@ -15,7 +15,7 @@ export default class Dot extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      leftValue: new Animated.Value(0)
+      leftValue: new Animated.Value(props.activeRouteIndex)
     }
   }
 

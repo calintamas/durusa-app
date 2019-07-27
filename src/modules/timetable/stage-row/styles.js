@@ -3,11 +3,11 @@ import { colors } from '../../../styles'
 
 export default StyleSheet.create({
   base: {
-    marginBottom: 20
+    marginBottom: 30
   },
   title: {
-    marginLeft: 15,
-    marginBottom: 10,
+    marginLeft: 25,
+    marginBottom: 20,
     color: colors.white,
     fontSize: 14,
     fontWeight: '600'
