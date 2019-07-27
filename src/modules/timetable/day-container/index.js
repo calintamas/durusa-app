@@ -27,6 +27,9 @@ export default class DayContainer extends PureComponent {
         refreshControl={this.renderRefreshControl(this.props)}>
         {
           locations.map((location, index) => {
+            if (!data[location.id]) {
+              return null
+            }
             return (
               <StageRow
                 key={index}

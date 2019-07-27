@@ -33,28 +33,7 @@ export default class Timetable extends Component {
         day2: [],
         day3: []
       },
-      api: apiStateCreator({ pending: true }),
-
-      header: {
-        index: 0,
-        routes: [
-          {
-            key: 'day1',
-            title: 'day 1',
-            subtitle: '23.08'
-          },
-          {
-            key: 'day2',
-            title: 'day 2',
-            subtitle: '24.08'
-          },
-          {
-            key: 'day3',
-            title: 'day 3',
-            subtitle: '25.08'
-          }
-        ]
-      }
+      api: apiStateCreator({ pending: true })
     }
   }
 
@@ -142,15 +121,7 @@ export default class Timetable extends Component {
   }
 
   onIndexChange(index) {
-    this.setState((state) => {
-      return ({
-        ...state,
-        header: {
-          ...state.header,
-          index
-        }
-      })
-    })
+    this.props.setHeaderTab(index);
   }
 
   renderTabBar(selfProps) {
@@ -162,12 +133,14 @@ export default class Timetable extends Component {
   }
 
   render() {
+    const props = this.props;
+
     return (
       <SafeAreaView style={styles.base}>
         <TabView
           lazy
           swipeEnabled
-          navigationState={this.state.header}
+          navigationState={props.header}
           renderScene={this.renderScene}
           onIndexChange={this.onIndexChange}
           initialLayout={{ width: metrics.screenWidth, height: metrics.screenHeight }}

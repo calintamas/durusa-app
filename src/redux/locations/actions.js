@@ -10,7 +10,6 @@ const get = () => async (dispatch) => {
     return Promise.resolve();
   } catch (err) {
     dispatch(locationsAC.get.error(err));
-    return Promise.reject();
   }
 }
 

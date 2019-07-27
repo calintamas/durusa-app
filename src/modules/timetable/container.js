@@ -1,10 +1,20 @@
 import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
 
 import locationsSelectors from '../../redux/locations/selectors'
+
+import timetableSelectors from '../../redux/timetable/selectors'
+import timetableActions from '../../redux/timetable/actions'
+
 import Timetable from './index'
 
 const mapStateToProps = (state) => ({
-  locations: locationsSelectors.getAll(state)
+  locations: locationsSelectors.getAll(state),
+  header: timetableSelectors.getHeader(state)
 })
 
-export default connect(mapStateToProps, null)(Timetable)
+const mapDispatchToProps = (dispatch) => bindActionCreators({
+  setHeaderTab: timetableActions.setHeaderTab
+}, dispatch)
+
+export default connect(mapStateToProps, mapDispatchToProps)(Timetable)

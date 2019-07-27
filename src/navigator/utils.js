@@ -1,5 +1,6 @@
 import store from '../redux/store'
 import appSelectors from '../redux/app/selectors'
+import timetableSelectors from '../redux/timetable/selectors'
 
 const getActiveRouteName = (navigationState) => {
   if (!navigationState) {
@@ -52,7 +53,9 @@ const scrollTabToTop = (navigation) => {
     const route = navigation.state.routes[index];
     const routeName = route.routeName;
 
-    const currentBottomTab = appSelectors.getCurrentBottomTab(store.getState());
+    const storeState = store.getState();
+
+    const currentBottomTab = appSelectors.getCurrentBottomTab(storeState);
     if (routeName !== currentBottomTab) {
       throw new Error('Active route is not on the current tab')
     }
@@ -61,13 +64,13 @@ const scrollTabToTop = (navigation) => {
 
     const pagerIndex = route.params.pagerIndex;
     if (pagerIndex != null) {
-      ref = route.params[`${route.routeName}_${pagerIndex}_ScrollViewRef`]
+      const activeHeaderIndex = timetableSelectors.getHeaderIndex(storeState);
+      ref = route.params[`${route.routeName}_${activeHeaderIndex}_ScrollViewRef`]
     }
 
     const method = ref.scrollToOffset ? 'scrollToOffset' : 'scrollTo';
     ref[method]({ offset: 0, x: 0 })
   } catch (err) {
-    console.log('err', err);
     // silently fail
   }
 }
