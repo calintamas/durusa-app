@@ -1,14 +1,14 @@
-import React from 'react'
 import { createBottomTabNavigator } from 'react-navigation'
 
 import HomeTab from './tabs/home'
 import TimetableTab from './tabs/timetable'
 import MenuTab from './tabs/menu'
-import TabIcon from '../../components/tab-icon'
+import TabBar from '../../components/tab-bar'
 import { tabBarOnPress } from '../utils'
 import { colors } from '../../styles'
 
 const options = {
+  tabBarComponent: TabBar,
   tabBarOptions: {
     showLabel: false,
     style: {
@@ -16,28 +16,21 @@ const options = {
     },
   },
   lazy: true,
-  initialRouteName: 'Home'
+  // initialRouteName: 'Timetable'
 };
 
 const DefaultNavigator = createBottomTabNavigator({
   Home: {
     screen: HomeTab,
     navigationOptions: ({ navigation }) => ({
-      tabBarIcon: ({ focused }) => <TabIcon type='home' isFocused={focused} />,
       tabBarOnPress
     })
   },
   Timetable: {
-    screen: TimetableTab,
-    navigationOptions: ({ navigation }) => ({
-      tabBarIcon: ({ focused }) => <TabIcon type='timetable' isFocused={focused} />
-    })
+    screen: TimetableTab
   },
   Menu: {
-    screen: MenuTab,
-    navigationOptions: ({ navigation }) => ({
-      tabBarIcon: ({ focused }) => <TabIcon type='menu' isFocused={focused} />
-    })
+    screen: MenuTab
   },
 }, options);
 

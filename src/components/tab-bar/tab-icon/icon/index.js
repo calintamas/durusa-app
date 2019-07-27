@@ -1,19 +1,21 @@
 import React from 'react'
 import { Image } from 'react-native'
 
-import { tabBarIcons } from '../../assets'
+import { tabBarIcons } from '../../../../assets'
+import { toLowerCase } from '../../../../utils/string'
 import styles from './styles'
 
 const getSource = (type = '', isFocused = false) => {
+  const lowerType = toLowerCase(type);
   const src = {
-    default: tabBarIcons[`${type}_gray`],
-    focused: tabBarIcons[`${type}_white`]
+    default: tabBarIcons[`${lowerType}_gray`],
+    focused: tabBarIcons[`${lowerType}_white`]
   };
 
   return isFocused ? src.focused : src.default
 }
 
-const TabIcon = (props) => {
+const Icon = (props) => {
   return (
     <Image
       style={styles.base}
@@ -22,4 +24,4 @@ const TabIcon = (props) => {
   );
 };
 
-export default TabIcon
+export default Icon

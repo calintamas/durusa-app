@@ -16,6 +16,10 @@ export default StyleSheet.create({
     paddingLeft: 15
   },
   separator: {
-    width: 15
+    width: 10,
+    height: 10
+  },
+  lastItemMargin: {
+    width: 25
   }
 })

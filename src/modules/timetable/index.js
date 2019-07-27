@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
-import { View, ScrollView, RefreshControl } from 'react-native'
+import { ScrollView, RefreshControl } from 'react-native'
 import { SafeAreaView } from 'react-navigation'
 import { apiStateCreator } from 'reddeck'
 
 import StageRow from './stage-row'
 import { Firestore } from '../../services/firebase'
 import { setScrollViewRef } from '../../navigator/utils'
+// import { metrics } from '../../styles'
 import styles from './styles'
 
 export default class Timetable extends Component {
@@ -17,7 +18,6 @@ export default class Timetable extends Component {
   constructor(props) {
     super(props);
     this.onCollectionUpdate = this.onCollectionUpdate.bind(this);
-    this.renderItem = this.renderItem.bind(this);
     this.onRefresh = this.onRefresh.bind(this);
     this.getData = this.getData.bind(this);
     this.setData = this.setData.bind(this);
@@ -25,7 +25,25 @@ export default class Timetable extends Component {
 
     this.state = {
       data: [],
-      api: apiStateCreator({ pending: true })
+      api: apiStateCreator({ pending: true }),
+
+      // header: {
+      //   index: 0,
+      //   routes: [
+      //     {
+      //       key: 'day1',
+      //       title: '23 Aug'
+      //     },
+      //     {
+      //       key: 'day2',
+      //       title: '24 Aug'
+      //     },
+      //     {
+      //       key: 'day3',
+      //       title: '25 Aug'
+      //     }
+      //   ]
+      // }
     }
   }
 
@@ -84,19 +102,8 @@ export default class Timetable extends Component {
     setScrollViewRef.call(this, ref, { prefix: 'Timetable' })
   }
 
-  renderItem({ item, index }) {
-    const stageItem = this.state.data[item];
-    return (
-      <StageRow
-        stageName={stageItem.location.name}
-        events={stageItem.events} />
-    )
-  }
+  renderScene() {
 
-  renderItemSeparator() {
-    return (
-      <View style={styles.separator} />
-    )
   }
 
   renderRefreshControl() {
@@ -110,6 +117,20 @@ export default class Timetable extends Component {
   render() {
     const events = this.state.data;
     const stages = Object.keys(this.state.data).sort((a, b) => events[a].location.order - events[b].location.order)
+
+    // return (
+    //   <SafeAreaView style={styles.base}>
+    //     <TabView
+    //       lazy
+    //       swipeEnabled
+    //       navigationState={this.state.header}
+    //       renderScene={this.renderScene}
+    //       // onIndexChange={this.onIndexChange}
+    //       initialLayout={{ width: metrics.screenWidth, height: metrics.screenHeight }}
+    //       // renderTabBar={(selfProps) => <HeaderTabBar {...selfProps} />}
+    //     />
+    //   </SafeAreaView>
+    // )
 
     return (
       <SafeAreaView style={styles.base}>

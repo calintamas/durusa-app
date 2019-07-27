@@ -19,7 +19,7 @@ export default class StageRow extends Component {
   renderListFooterComponent() {
     // Render a right margin for the last item in the list
     return (
-      <View style={styles.separator} />
+      <View style={styles.lastItemMargin} />
     )
   }
 

@@ -42,6 +42,7 @@
 		ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */; };
 		ED297163215061F000B7C4FE /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED297162215061F000B7C4FE /* JavaScriptCore.framework */; };
 		ED2971652150620600B7C4FE /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED2971642150620600B7C4FE /* JavaScriptCore.framework */; };
+		FE089D4D22EC5B33003A3261 /* libRNReanimated.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FE089D4A22EC5B2D003A3261 /* libRNReanimated.a */; };
 		FEBA9FE922C91645000B1F2D /* libRNGestureHandler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FEBA9F9022C915B7000B1F2D /* libRNGestureHandler.a */; };
 		FEF7218922E72EFE002B9561 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FEF7216122E72EFE002B9561 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
@@ -292,6 +293,20 @@
 			remoteGlobalIDString = 358F4ED71D1E81A9004DF814;
 			remoteInfo = RCTBlob;
 		};
+		FE089D4922EC5B2D003A3261 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FE089D1C22EC5B2D003A3261 /* RNReanimated.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 134814201AA4EA6300B7C361;
+			remoteInfo = RNReanimated;
+		};
+		FE089D4B22EC5B2D003A3261 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FE089D1C22EC5B2D003A3261 /* RNReanimated.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = FDBB176E229BF04900D1E455;
+			remoteInfo = "RNReanimated-tvOS";
+		};
 		FEBA9F8522C915B7000B1F2D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 146833FF1AC3E56700842450 /* React.xcodeproj */;
@@ -378,6 +393,7 @@
 		EBDC4CAE839317454AD47FC1 /* Pods-DurusaApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DurusaApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-DurusaApp/Pods-DurusaApp.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
+		FE089D1C22EC5B2D003A3261 /* RNReanimated.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNReanimated.xcodeproj; path = "../node_modules/react-native-reanimated/ios/RNReanimated.xcodeproj"; sourceTree = "<group>"; };
 		FEF7216122E72EFE002B9561 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -394,6 +410,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE089D4D22EC5B33003A3261 /* libRNReanimated.a in Frameworks */,
 				FEBA9FE922C91645000B1F2D /* libRNGestureHandler.a in Frameworks */,
 				ED297163215061F000B7C4FE /* JavaScriptCore.framework in Frameworks */,
 				ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */,
@@ -598,6 +615,7 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				FE089D1C22EC5B2D003A3261 /* RNReanimated.xcodeproj */,
 				5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */,
 				146833FF1AC3E56700842450 /* React.xcodeproj */,
 				00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */,
@@ -657,6 +675,15 @@
 			children = (
 				ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */,
 				2D16E6721FA4F8DC00B85C8A /* libRCTBlob-tvOS.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FE089D1D22EC5B2D003A3261 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FE089D4A22EC5B2D003A3261 /* libRNReanimated.a */,
+				FE089D4C22EC5B2D003A3261 /* libRNReanimated-tvOS.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -854,6 +881,10 @@
 				{
 					ProductGroup = FEBA9F5E22C915B7000B1F2D /* Products */;
 					ProjectRef = 3302FEDAD0A94277A5349B57 /* RNGestureHandler.xcodeproj */;
+				},
+				{
+					ProductGroup = FE089D1D22EC5B2D003A3261 /* Products */;
+					ProjectRef = FE089D1C22EC5B2D003A3261 /* RNReanimated.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -1096,6 +1127,20 @@
 			fileType = archive.ar;
 			path = libRCTBlob.a;
 			remoteRef = ADBDB9261DFEBF0700ED6528 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FE089D4A22EC5B2D003A3261 /* libRNReanimated.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNReanimated.a;
+			remoteRef = FE089D4922EC5B2D003A3261 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FE089D4C22EC5B2D003A3261 /* libRNReanimated-tvOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libRNReanimated-tvOS.a";
+			remoteRef = FE089D4B22EC5B2D003A3261 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		FEBA9F8622C915B7000B1F2D /* libjsi.a */ = {

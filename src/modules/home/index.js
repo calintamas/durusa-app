@@ -32,7 +32,7 @@ export default class Home extends Component {
   }
 
   componentDidMount() {
-    this.firestoreRef = Firestore.getCollectionRef('news');
+    this.firestoreRef = Firestore.getCollectionRef('news').orderBy('date', 'desc');
     this.unsubscribe = this.firestoreRef.onSnapshot(this.onCollectionUpdate)
   }
 
@@ -88,6 +88,7 @@ export default class Home extends Component {
   setData(querySnapshot) {
     let data = [];
     querySnapshot.forEach((doc) => data.push(doc.data()));
+
     this.setState({
       data,
       api: apiStateCreator({ success: true })
