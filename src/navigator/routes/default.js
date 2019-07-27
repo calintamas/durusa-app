@@ -16,7 +16,7 @@ const options = {
     },
   },
   lazy: true,
-  // initialRouteName: 'Timetable'
+  initialRouteName: 'Timetable'
 };
 
 const DefaultNavigator = createBottomTabNavigator({
@@ -27,7 +27,10 @@ const DefaultNavigator = createBottomTabNavigator({
     })
   },
   Timetable: {
-    screen: TimetableTab
+    screen: TimetableTab,
+    navigationOptions: ({ navigation }) => ({
+      tabBarOnPress
+    })
   },
   Menu: {
     screen: MenuTab

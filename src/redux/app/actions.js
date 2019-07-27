@@ -1,9 +1,12 @@
 import appAC from './action-creators'
+import locationsActions from '../locations/actions'
 import Navigation from '../../services/navigation'
 
-const initialSetup = (navigationRef) => (dispatch) => {
+const initialSetup = (navigationRef) => async (dispatch) => {
   try {
     dispatch(appAC.initialSetup.pending());
+
+    await dispatch(locationsActions.get());
 
     Navigation.setRef(navigationRef);
     Navigation.getRef().navigate('Default');

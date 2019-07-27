@@ -1,6 +1,6 @@
 import { createStackNavigator } from 'react-navigation'
 
-import Timetable from '../../../modules/timetable'
+import Timetable from '../../../modules/timetable/container'
 import { getDefaultNavigationOptions } from '../../navigation-options'
 
 const options = {

@@ -57,8 +57,17 @@ const scrollTabToTop = (navigation) => {
       throw new Error('Active route is not on the current tab')
     }
 
-    route.params[`${route.routeName}_ScrollViewRef`].scrollToOffset({ offset: 0 })
+    let ref = route.params[`${route.routeName}_ScrollViewRef`];
+
+    const pagerIndex = route.params.pagerIndex;
+    if (pagerIndex != null) {
+      ref = route.params[`${route.routeName}_${pagerIndex}_ScrollViewRef`]
+    }
+
+    const method = ref.scrollToOffset ? 'scrollToOffset' : 'scrollTo';
+    ref[method]({ offset: 0, x: 0 })
   } catch (err) {
+    console.log('err', err);
     // silently fail
   }
 }
@@ -77,7 +86,8 @@ function setScrollViewRef(ref, options = {}) {
 
   this[refKey] = ref;
   this.props.navigation.setParams({
-    [refKey]: ref
+    [refKey]: ref,
+    pagerIndex: options.pagerIndex
   })
 }
 
