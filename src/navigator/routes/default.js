@@ -12,11 +12,11 @@ const options = {
   tabBarOptions: {
     showLabel: false,
     style: {
-      backgroundColor: colors.black
+      backgroundColor: colors.dusk
     },
   },
   lazy: true,
-  initialRouteName: 'Timetable'
+  // initialRouteName: 'Timetable'
 };
 
 const DefaultNavigator = createBottomTabNavigator({

@@ -49,8 +49,8 @@ export default class Home extends Component {
       <NewsCard
         title={item.title}
         text={item.text}
-        image={item.photo_url}
         date={item.date}
+        icon={item.icon}
         onPress={() => this.onCardPress(item)} />
     )
   }

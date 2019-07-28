@@ -43,6 +43,9 @@
 		ED297163215061F000B7C4FE /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED297162215061F000B7C4FE /* JavaScriptCore.framework */; };
 		ED2971652150620600B7C4FE /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED2971642150620600B7C4FE /* JavaScriptCore.framework */; };
 		FE089D4D22EC5B33003A3261 /* libRNReanimated.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FE089D4A22EC5B2D003A3261 /* libRNReanimated.a */; };
+		FE089D9A22EDDC8F003A3261 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FE089D9722EDDC8F003A3261 /* Montserrat-Bold.ttf */; };
+		FE089D9B22EDDC8F003A3261 /* Montserrat-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FE089D9822EDDC8F003A3261 /* Montserrat-Italic.ttf */; };
+		FE089D9C22EDDC8F003A3261 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FE089D9922EDDC8F003A3261 /* Montserrat-Regular.ttf */; };
 		FEBA9FE922C91645000B1F2D /* libRNGestureHandler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FEBA9F9022C915B7000B1F2D /* libRNGestureHandler.a */; };
 		FEF7218922E72EFE002B9561 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FEF7216122E72EFE002B9561 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
@@ -394,6 +397,9 @@
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
 		FE089D1C22EC5B2D003A3261 /* RNReanimated.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNReanimated.xcodeproj; path = "../node_modules/react-native-reanimated/ios/RNReanimated.xcodeproj"; sourceTree = "<group>"; };
+		FE089D9722EDDC8F003A3261 /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Bold.ttf"; path = "../../src/assets/fonts/Montserrat-Bold.ttf"; sourceTree = "<group>"; };
+		FE089D9822EDDC8F003A3261 /* Montserrat-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Italic.ttf"; path = "../../src/assets/fonts/Montserrat-Italic.ttf"; sourceTree = "<group>"; };
+		FE089D9922EDDC8F003A3261 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Regular.ttf"; path = "../../src/assets/fonts/Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 		FEF7216122E72EFE002B9561 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -646,6 +652,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				FE089D9622EDDC63003A3261 /* Fonts */,
 				13B07FAE1A68108700A75B9A /* DurusaApp */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* DurusaAppTests */,
@@ -686,6 +693,16 @@
 				FE089D4C22EC5B2D003A3261 /* libRNReanimated-tvOS.a */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		FE089D9622EDDC63003A3261 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				FE089D9722EDDC8F003A3261 /* Montserrat-Bold.ttf */,
+				FE089D9822EDDC8F003A3261 /* Montserrat-Italic.ttf */,
+				FE089D9922EDDC8F003A3261 /* Montserrat-Regular.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		FEBA9F5E22C915B7000B1F2D /* Products */ = {
@@ -1206,6 +1223,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE089D9C22EDDC8F003A3261 /* Montserrat-Regular.ttf in Resources */,
+				FE089D9B22EDDC8F003A3261 /* Montserrat-Italic.ttf in Resources */,
+				FE089D9A22EDDC8F003A3261 /* Montserrat-Bold.ttf in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 				FEF7218922E72EFE002B9561 /* GoogleService-Info.plist in Resources */,

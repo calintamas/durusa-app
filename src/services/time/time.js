@@ -6,7 +6,11 @@ class Time {
   }
 
   static getRelativeDate(date = '') {
-    return moment(date).calendar()
+    return moment(date).calendar(null, {
+      sameDay: function (now) {
+        return `[${this.from(now)}]`
+      }
+    })
   }
 }
 

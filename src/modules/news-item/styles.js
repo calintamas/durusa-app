@@ -4,7 +4,7 @@ import { colors } from '../../styles'
 export default StyleSheet.create({
   base: {
     flex: 1,
-    backgroundColor: colors.black
+    backgroundColor: colors.dusk
   },
   contentContainer: {
     padding: 15

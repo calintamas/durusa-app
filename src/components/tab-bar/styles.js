@@ -6,7 +6,7 @@ import { colors } from '../../styles'
 export default StyleSheet.create({
   base: {
     height: 55,
-    backgroundColor: colors.black,
+    backgroundColor: colors.dusk,
     flexDirection: 'row',
     elevation: 2,
     borderTopWidth: StyleSheet.hairlineWidth,

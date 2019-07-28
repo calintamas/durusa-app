@@ -1,7 +1,10 @@
 const icons = {
-  right_arrow_pink: require('./icons/right-arrow-pink.png'),
-  right_arrow_yellow: require('./icons/right-arrow-yellow.png'),
-  share_yellow: require('./icons/share-yellow.png')
+  right_arrow_gray: require('./icons/right-arrow-gray.png'),
+  share_yellow: require('./icons/share-yellow.png'),
+  sunrise_pink: require('./icons/sunrise-pink.png'),
+  heart_orange: require('./icons/heart-orange.png'),
+  wind_green: require('./icons/wind-green.png'),
+  rain_green: require('./icons/rain-green.png'),
 }
 
 const images = {

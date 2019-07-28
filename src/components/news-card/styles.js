@@ -1,13 +1,15 @@
 import { StyleSheet } from 'react-native'
-import { colors } from '../../styles'
+import { colors, fonts } from '../../styles'
 
 export default StyleSheet.create({
   base: {
     flexDirection: 'row',
-    backgroundColor: colors.darkGray,
     padding: 15,
     borderRadius: 4,
     overflow: 'hidden'
+  },
+  iconContainer: {
+    width: '13%'
   },
   contentContainer: {
     flex: 1,
@@ -18,18 +20,24 @@ export default StyleSheet.create({
     alignItems: 'flex-end'
   },
   dateText: {
+    ...fonts.default,
     fontSize: 10,
     color: colors.gray
   },
   title: {
-    fontSize: 14,
+    ...fonts.default,
+    fontSize: 20,
     color: colors.white,
-    fontWeight: '600',
-    marginVertical: 8
+    fontWeight: '800',
+    marginBottom: 8
   },
   text: {
-    fontSize: 12,
+    ...fonts.default,
+    fontSize: 14,
     color: colors.white,
     marginBottom: 8
+  },
+  rightArrowContainer: {
+    marginTop: 6
   }
 })
