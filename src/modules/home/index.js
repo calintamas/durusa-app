@@ -4,9 +4,11 @@ import { SafeAreaView } from 'react-navigation'
 import { apiStateCreator } from 'reddeck'
 
 import NewsCard from '../../components/news-card'
+import Countdown from '../../components/countdown'
 import { images } from '../../assets'
 import { Firestore } from '../../services/firebase'
 import { setScrollViewRef } from '../../navigator/utils'
+import Time from '../../services/time'
 import styles from './styles'
 
 export default class Home extends Component {
@@ -19,6 +21,7 @@ export default class Home extends Component {
     super(props);
     this.onCollectionUpdate = this.onCollectionUpdate.bind(this);
     this.renderItem = this.renderItem.bind(this);
+    this.renderHeader = this.renderHeader.bind(this);
     this.onRefresh = this.onRefresh.bind(this);
     this.getData = this.getData.bind(this);
     this.setData = this.setData.bind(this);
@@ -60,13 +63,17 @@ export default class Home extends Component {
       <View style={styles.headerContainer}>
         <ImageBackground
           style={styles.bg}
-          source={images.home_bg}
-          // resizeMode='cover'
-          >
+          source={images.home_bg}>
           <Image
             style={styles.logo}
             source={images.logo}
             resizeMode='contain' />
+
+          {
+            Time.isBeforeFestival(this.props.days)
+              ? <Countdown date={Time.getFirstDay(this.props.days)} />
+              : null
+          }
         </ImageBackground>
       </View>
     )

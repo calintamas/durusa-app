@@ -1,6 +1,6 @@
 import { createStackNavigator } from 'react-navigation'
 
-import Home from '../../../modules/home'
+import Home from '../../../modules/home/container'
 import NewsItem from '../../../modules/news-item'
 import { getDefaultNavigationOptions } from '../../navigation-options'
 

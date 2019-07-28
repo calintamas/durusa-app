@@ -22,9 +22,14 @@ const toUpperCase = (str = '') => {
   }
 }
 
+const addZeroPrefix = (nr = null) => {
+  return nr < 10 ? `0${nr}` : `${nr}`
+}
+
 export {
   countSubstringOccurences,
   capitalizeFirstLetter,
   toLowerCase,
-  toUpperCase
+  toUpperCase,
+  addZeroPrefix
 }
