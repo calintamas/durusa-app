@@ -102,6 +102,9 @@ export default class Home extends Component {
   }
 
   onCardPress(item) {
+    if (!item.text) {
+      return
+    }
     this.props.navigation.navigate('NewsItem', {
       data: item
     })

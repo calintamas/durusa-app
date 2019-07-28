@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { View, Text, TouchableOpacity } from 'react-native'
 
+import Time from '../../services/time'
 import styles from './styles'
 
 export default class HeaderTabBar extends Component {
@@ -13,7 +14,7 @@ export default class HeaderTabBar extends Component {
     return (
       <View style={styles.base}>
         <Text style={styles.title}>{activeRoute.title}</Text>
-        <Text style={styles.subtitle}>{activeRoute.subtitle}</Text>
+        <Text style={styles.subtitle}>{Time.getFestivalDay(activeRoute.date)}</Text>
 
         <View style={styles.container}>
           {

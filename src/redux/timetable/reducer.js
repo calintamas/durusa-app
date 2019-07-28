@@ -1,25 +1,13 @@
+import config from '../../config'
+import Time from '../../services/time'
 import timetableTypes from './types'
 
 const initialState = {
   header: {
-    index: 0,
-    routes: [
-      {
-        key: 'day1',
-        title: 'day 1',
-        subtitle: '23.08'
-      },
-      {
-        key: 'day2',
-        title: 'day 2',
-        subtitle: '24.08'
-      },
-      {
-        key: 'day3',
-        title: 'day 3',
-        subtitle: '25.08'
-      }
-    ]
+    index: Time.getCurrentFestivalDayIndex(config.days, {
+      switchHour: config.switch_day_hour
+    }),
+    routes: config.days
   }
 }
 
