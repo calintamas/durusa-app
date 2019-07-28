@@ -38,6 +38,7 @@ export default StyleSheet.create({
     marginBottom: 8
   },
   rightArrowContainer: {
+    width: 14,
     marginTop: 6
   }
 })

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, Image, FlatList } from 'react-native'
+import { View, Image, FlatList, ImageBackground, StatusBar } from 'react-native'
 import { SafeAreaView } from 'react-navigation'
 import { apiStateCreator } from 'reddeck'
 
@@ -57,11 +57,17 @@ export default class Home extends Component {
 
   renderHeader() {
     return (
-      <View style={styles.logoContainer}>
-        <Image
-          style={styles.logo}
-          source={images.logo}
-          resizeMode='contain' />
+      <View style={styles.headerContainer}>
+        <ImageBackground
+          style={styles.bg}
+          source={images.home_bg}
+          // resizeMode='cover'
+          >
+          <Image
+            style={styles.logo}
+            source={images.logo}
+            resizeMode='contain' />
+        </ImageBackground>
       </View>
     )
   }
@@ -110,6 +116,7 @@ export default class Home extends Component {
 
     return (
       <SafeAreaView style={styles.base}>
+        <StatusBar barStyle='light-content' />
         <FlatList
           ref={this.setScrollViewRef}
           contentContainerStyle={styles.contentContainer}

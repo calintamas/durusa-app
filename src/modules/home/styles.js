@@ -6,15 +6,23 @@ export default StyleSheet.create({
     flex: 1,
     backgroundColor: colors.dusk
   },
-  contentContainer: {
-    padding: 15
-  },
-  logoContainer: {
+  headerContainer: {
+    height: 250,
     alignItems: 'center',
-    marginBottom: 20
+    marginBottom: 25
+  },
+  bg: {
+    width: '100%',
+    height: '100%',
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  contentContainer: {
+    padding: 15,
+    paddingTop: 0
   },
   logo: {
-    width: 100,
+    width: 117,
     height: 100
   },
   separator: {

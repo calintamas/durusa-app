@@ -59,9 +59,13 @@ const NewsCard = (props) => {
       </View>
 
       <View style={styles.rightArrowContainer}>
-        <Icon
-          source={icons.right_arrow_gray}
-          size={14} />
+        {
+          textLength > 0
+            ? <Icon
+               source={icons.right_arrow_gray}
+               size={14} />
+            : null
+        }
       </View>
 
     </TouchableOpacity>

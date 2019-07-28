@@ -8,7 +8,8 @@ const icons = {
 }
 
 const images = {
-  logo: require('./images/logo.png')
+  logo: require('./images/logo.png'),
+  home_bg: require('./images/home-bg.png')
 }
 
 const tabBarIcons = {
