@@ -25,7 +25,6 @@ export default class Home extends Component {
     this.onRefresh = this.onRefresh.bind(this);
     this.getData = this.getData.bind(this);
     this.setData = this.setData.bind(this);
-    this.onCardPress = this.onCardPress.bind(this);
     this.setScrollViewRef = this.setScrollViewRef.bind(this);
 
     this.state = {
@@ -53,8 +52,7 @@ export default class Home extends Component {
         title={item.title}
         text={item.text}
         date={item.date}
-        icon={item.icon}
-        onPress={() => this.onCardPress(item)} />
+        icon={item.icon} />
     )
   }
 
@@ -105,15 +103,6 @@ export default class Home extends Component {
     this.setState({
       data,
       api: apiStateCreator({ success: true })
-    })
-  }
-
-  onCardPress(item) {
-    if (!item.text) {
-      return
-    }
-    this.props.navigation.navigate('NewsItem', {
-      data: item
     })
   }
 

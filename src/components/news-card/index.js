@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, TouchableOpacity, Text } from 'react-native'
+import { View, Text } from 'react-native'
 
 import Time from '../../services/time'
 import Icon from '../icon'
@@ -33,9 +33,7 @@ const NewsCard = (props) => {
   const textLength = getTextLength(props.text);
 
   return (
-    <TouchableOpacity
-      style={styles.base}
-      onPress={props.onPress}>
+    <View style={styles.base}>
 
       <View style={styles.iconContainer}>
         <Icon source={getIconSource(props.icon)} />
@@ -47,9 +45,7 @@ const NewsCard = (props) => {
         {
           textLength > 0
             ? <Text
-                style={styles.text}
-                numberOfLines={3}
-                ellipsizeMode='tail'>
+                style={styles.text}>
                 {props.text}
               </Text>
             : null
@@ -57,18 +53,7 @@ const NewsCard = (props) => {
 
         <Text style={styles.dateText}>{Time.getRelativeDate(props.date)}</Text>
       </View>
-
-      <View style={styles.rightArrowContainer}>
-        {
-          textLength > 0
-            ? <Icon
-               source={icons.right_arrow_gray}
-               size={14} />
-            : null
-        }
-      </View>
-
-    </TouchableOpacity>
+    </View>
   )
 };
 

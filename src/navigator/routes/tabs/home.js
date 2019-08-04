@@ -1,7 +1,6 @@
 import { createStackNavigator } from 'react-navigation'
 
 import Home from '../../../modules/home/container'
-import NewsItem from '../../../modules/news-item'
 import { getDefaultNavigationOptions } from '../../navigation-options'
 
 const options = {
@@ -11,9 +10,6 @@ const options = {
 const HomeTab = createStackNavigator({
   Home: {
     screen: Home
-  },
-  NewsItem: {
-    screen: NewsItem
   }
 }, options)
 

@@ -14,7 +14,8 @@ class Time {
     return moment(date).calendar(null, {
       sameDay: function (now) {
         return `[${this.from(now)}]`
-      }
+      },
+      sameElse: 'DD.MM.YYYY'
     })
   }
 
