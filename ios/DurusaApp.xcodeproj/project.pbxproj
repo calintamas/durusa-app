@@ -46,6 +46,7 @@
 		FE089D9A22EDDC8F003A3261 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FE089D9722EDDC8F003A3261 /* Montserrat-Bold.ttf */; };
 		FE089D9B22EDDC8F003A3261 /* Montserrat-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FE089D9822EDDC8F003A3261 /* Montserrat-Italic.ttf */; };
 		FE089D9C22EDDC8F003A3261 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FE089D9922EDDC8F003A3261 /* Montserrat-Regular.ttf */; };
+		FE0B343A22F6F7CC006DA74E /* libRNCAsyncStorage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FE0B343422F6F7C7006DA74E /* libRNCAsyncStorage.a */; };
 		FEBA9FE922C91645000B1F2D /* libRNGestureHandler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FEBA9F9022C915B7000B1F2D /* libRNGestureHandler.a */; };
 		FEF7218922E72EFE002B9561 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FEF7216122E72EFE002B9561 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
@@ -310,6 +311,13 @@
 			remoteGlobalIDString = FDBB176E229BF04900D1E455;
 			remoteInfo = "RNReanimated-tvOS";
 		};
+		FE0B343322F6F7C7006DA74E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FE0B340822F6F7C7006DA74E /* RNCAsyncStorage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 134814201AA4EA6300B7C361;
+			remoteInfo = RNCAsyncStorage;
+		};
 		FEBA9F8522C915B7000B1F2D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 146833FF1AC3E56700842450 /* React.xcodeproj */;
@@ -400,6 +408,7 @@
 		FE089D9722EDDC8F003A3261 /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Bold.ttf"; path = "../../src/assets/fonts/Montserrat-Bold.ttf"; sourceTree = "<group>"; };
 		FE089D9822EDDC8F003A3261 /* Montserrat-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Italic.ttf"; path = "../../src/assets/fonts/Montserrat-Italic.ttf"; sourceTree = "<group>"; };
 		FE089D9922EDDC8F003A3261 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Regular.ttf"; path = "../../src/assets/fonts/Montserrat-Regular.ttf"; sourceTree = "<group>"; };
+		FE0B340822F6F7C7006DA74E /* RNCAsyncStorage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNCAsyncStorage.xcodeproj; path = "../node_modules/@react-native-community/async-storage/ios/RNCAsyncStorage.xcodeproj"; sourceTree = "<group>"; };
 		FEF7216122E72EFE002B9561 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -416,6 +425,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE0B343A22F6F7CC006DA74E /* libRNCAsyncStorage.a in Frameworks */,
 				FE089D4D22EC5B33003A3261 /* libRNReanimated.a in Frameworks */,
 				FEBA9FE922C91645000B1F2D /* libRNGestureHandler.a in Frameworks */,
 				ED297163215061F000B7C4FE /* JavaScriptCore.framework in Frameworks */,
@@ -621,6 +631,7 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				FE0B340822F6F7C7006DA74E /* RNCAsyncStorage.xcodeproj */,
 				FE089D1C22EC5B2D003A3261 /* RNReanimated.xcodeproj */,
 				5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */,
 				146833FF1AC3E56700842450 /* React.xcodeproj */,
@@ -703,6 +714,14 @@
 				FE089D9922EDDC8F003A3261 /* Montserrat-Regular.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		FE0B340922F6F7C7006DA74E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FE0B343422F6F7C7006DA74E /* libRNCAsyncStorage.a */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		FEBA9F5E22C915B7000B1F2D /* Products */ = {
@@ -890,6 +909,10 @@
 				{
 					ProductGroup = 146834001AC3E56700842450 /* Products */;
 					ProjectRef = 146833FF1AC3E56700842450 /* React.xcodeproj */;
+				},
+				{
+					ProductGroup = FE0B340922F6F7C7006DA74E /* Products */;
+					ProjectRef = FE0B340822F6F7C7006DA74E /* RNCAsyncStorage.xcodeproj */;
 				},
 				{
 					ProductGroup = FEF721F322E7464C002B9561 /* Products */;
@@ -1158,6 +1181,13 @@
 			fileType = archive.ar;
 			path = "libRNReanimated-tvOS.a";
 			remoteRef = FE089D4B22EC5B2D003A3261 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FE0B343422F6F7C7006DA74E /* libRNCAsyncStorage.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNCAsyncStorage.a;
+			remoteRef = FE0B343322F6F7C7006DA74E /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		FEBA9F8622C915B7000B1F2D /* libjsi.a */ = {
