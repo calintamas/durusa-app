@@ -16,7 +16,7 @@ const config = {
       date: '2019-08-25'
     }
   ],
-  switch_day_hour: 10 // hour after which a new festival day starts 🙈
+  switch_day_hour: 10, // hour after which a new festival day starts 🙈
 }
 
 export default config

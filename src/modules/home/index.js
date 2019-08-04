@@ -71,7 +71,7 @@ export default class Home extends Component {
 
           {
             Time.isBeforeFestival(this.props.days)
-              ? <Countdown date={Time.getFirstDay(this.props.days)} />
+              ? <Countdown date={Time.getFestivalStartDate(this.props.days)} />
               : null
           }
         </ImageBackground>

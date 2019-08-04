@@ -11,9 +11,10 @@ export default class Countdown extends Component {
 
     this.state = {
       distanceToDate: {
-        days: '-',
-        hours: '-',
-        minutes: '-'
+        days: '00',
+        hours: '00',
+        minutes: '00',
+        seconds: '00'
       },
       appState: AppState.currentState
     }
@@ -36,13 +37,21 @@ export default class Countdown extends Component {
       clearInterval(this.interval)
     }
 
+    const initialDistToDate = Time.getDistanceToDate(countDownDate);
+    if (!initialDistToDate) {
+      return
+    }
     this.setState({
-      distanceToDate: Time.getDistanceToDate(countDownDate)
+      distanceToDate: initialDistToDate
     });
 
     this.interval = setInterval(() => {
+      const distToDate = Time.getDistanceToDate(countDownDate);
+      if (!distToDate) {
+        return clearInterval(this.interval);
+      }
       this.setState({
-        distanceToDate: Time.getDistanceToDate(countDownDate)
+        distanceToDate: distToDate
       });
     }, 1000)
   }

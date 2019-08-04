@@ -2,6 +2,10 @@ import moment from './moment'
 import { addZeroPrefix } from '../../utils/string'
 
 class Time {
+  static _getNow(someDate = null) {
+    return someDate ? moment(someDate) : moment()
+  }
+
   static getHour(date = '') {
     return moment(date).format('k:mm')
   }
@@ -22,17 +26,17 @@ class Time {
     const switchHour = options.switchHour || 10;
 
     try {
-      const now = moment();
+      const now = this._getNow(options.now);
       const currentDate = now.format('YYYY-MM-DD');
 
       let festivalDayIndex = days.findIndex((item) => item.date === currentDate);
 
-      const shouldShowNextDay = now.isAfter(moment().hour(switchHour));
+      const shouldShowNextDay = now.isAfter(this._getNow(options.now).hour(switchHour));
       if (!shouldShowNextDay) {
         festivalDayIndex -= 1
       }
 
-      if (festivalDayIndex === -1) {
+      if (festivalDayIndex < 0) {
         throw new Error('Not a festival day 😞')
       }
 
@@ -42,19 +46,32 @@ class Time {
     }
   }
 
+  static getFestivalStartDate(days = []) {
+    return moment(this.getFirstDay(days)).hour(12).format()
+  }
+
   static getFirstDay(days = []) {
     return days[0].date
   }
 
-  static isFestivalDay(days = []) {
-    const currentDate = moment().format('YYYY-MM-DD');
-    return !!days.find((item) => item.date === currentDate);
+  static isFestivalDay(days = [], options = {}) {
+    try {
+      const now = this._getNow(options.now);
+      const currentDate = now.format('YYYY-MM-DD');
+      return !!days.find((item) => item.date === currentDate);
+    } catch (err) {
+      return false
+    }
   }
 
-  static isBeforeFestival(days = []) {
-    const firstDay = moment(this.getFirstDay(days));
-    const now = moment();
-    return now.isBefore(firstDay);
+  static isBeforeFestival(days = [], options = {}) {
+    try {
+      const now = this._getNow(options.now);
+      const firstDay = moment(this.getFirstDay(days));
+      return now.isBefore(firstDay);
+    } catch (err) {
+      return false
+    }
   }
 
   static getDistanceToDate(date = '') {
@@ -62,6 +79,10 @@ class Time {
     const now = new Date().getTime();
 
     const distance = countDownDate - now;
+
+    if (distance < 0) {
+      return null
+    }
 
     // Time calculations for days, hours, minutes and seconds
     // https://www.w3schools.com/howto/howto_js_countdown.asp
