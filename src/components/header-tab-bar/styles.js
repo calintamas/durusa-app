@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native'
-import { colors } from '../../styles'
+import { colors, fonts } from '../../styles'
 
 export default StyleSheet.create({
   base: {
@@ -10,11 +10,13 @@ export default StyleSheet.create({
     flexDirection: 'row',
   },
   title: {
+    ...fonts.default,
     color: colors.white,
     fontWeight: '800',
     fontSize: 28
   },
   subtitle: {
+    ...fonts.default,
     color: colors.white,
     fontSize: 12
   },

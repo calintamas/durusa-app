@@ -6,7 +6,8 @@ export default StyleSheet.create({
     flexDirection: 'row',
     padding: 15,
     borderRadius: 4,
-    overflow: 'hidden'
+    overflow: 'hidden',
+    marginHorizontal: 15
   },
   iconContainer: {
     width: '13%'

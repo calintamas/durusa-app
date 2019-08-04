@@ -18,8 +18,7 @@ export default StyleSheet.create({
     justifyContent: 'center'
   },
   contentContainer: {
-    padding: 15,
-    paddingTop: 0
+    paddingBottom: 15
   },
   logo: {
     width: 117,

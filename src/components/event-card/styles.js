@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native'
-import { colors } from '../../styles'
+import { colors, fonts } from '../../styles'
 
 const dropShadow = {
   shadowOffset: {
@@ -34,12 +34,14 @@ export default StyleSheet.create({
     marginBottom: 10
   },
   title: {
+    ...fonts.default,
     fontWeight: '700',
     color: colors.white,
     textAlign: 'center',
     ...dropShadow
   },
   hours: {
+    ...fonts.default,
     fontSize: 11,
     fontWeight: '600',
     color: colors.white,

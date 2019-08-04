@@ -1,11 +1,12 @@
 import { StyleSheet } from 'react-native'
-import { colors } from '../../../styles'
+import { colors, fonts } from '../../../styles'
 
 export default StyleSheet.create({
   base: {
     marginBottom: 30
   },
   title: {
+    ...fonts.default,
     marginLeft: 25,
     marginBottom: 20,
     color: colors.white,
