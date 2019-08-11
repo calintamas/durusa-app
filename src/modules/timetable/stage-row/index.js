@@ -2,14 +2,27 @@ import React, { Component } from 'react'
 import { View, FlatList, Text } from 'react-native'
 
 import EventCard from '../../../components/event-card'
+import ActivityEventCard from '../../../components/activity-event-card'
 import styles from './styles'
 
 export default class StageRow extends Component {
+  constructor(props) {
+    super(props);
+    this.renderItem = this.renderItem.bind(this);
+  }
+
   keyExtractor(item, index) {
     return `${index}`
   }
 
   renderItem({ item }) {
+    if (this.props.isVertical) {
+      return (
+        <ActivityEventCard
+          data={item} />
+      )
+    }
+
     return (
       <EventCard
         data={item} />
@@ -30,15 +43,21 @@ export default class StageRow extends Component {
   }
 
   render() {
-    const { data, title } = this.props;
+    const { data, title, isVertical, isLast } = this.props;
+
+    const baseStyle = [
+      styles.base,
+      isLast && styles.lastItem
+    ];
 
     return (
-      <View style={styles.base}>
+      <View style={baseStyle}>
         <Text style={styles.title}>{title}</Text>
 
         <FlatList
           style={styles.list}
-          horizontal={true}
+          contentContainerStyle={isVertical && styles.verticalContainer}
+          horizontal={!isVertical}
           showsHorizontalScrollIndicator={false}
           keyExtractor={this.keyExtractor}
           data={data}

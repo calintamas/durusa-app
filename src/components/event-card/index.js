@@ -1,12 +1,8 @@
 import React from 'react'
 import { View, ImageBackground, Text } from 'react-native'
+
 import Time from '../../services/time'
-
 import styles from './styles'
-
-const getHours = (startDate, endDate) => {
-  return `${Time.getHour(startDate)} - ${Time.getHour(endDate)}`
-}
 
 const EventCard = (props) => {
   const data = props.data;
@@ -23,7 +19,7 @@ const EventCard = (props) => {
           style={styles.title}>
           {data.name}
         </Text>
-        <Text style={styles.hours}>{getHours(data.start_date, data.end_date)}</Text>
+        <Text style={styles.hours}>{Time.getEventHours(data.start_date, data.end_date)}</Text>
       </View>
 
       </ImageBackground>

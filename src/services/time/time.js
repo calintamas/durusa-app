@@ -10,6 +10,13 @@ class Time {
     return moment(date).format('k:mm')
   }
 
+  static getEventHours(startDate, endDate) {
+    if (!startDate || !endDate) {
+      return 'All day'
+    }
+    return `${this.getHour(startDate)} - ${this.getHour(endDate)}`
+  }
+
   static getRelativeDate(date = '') {
     return moment(date).calendar(null, {
       sameDay: function (now) {

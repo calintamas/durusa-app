@@ -7,6 +7,7 @@ const colors = {
   yellow: '#FECD22',
   darkPurple: '#1B0A17',
   lightPurple: '#2B0F24',
+  purple: '#3F132F'
 }
 
 export default colors

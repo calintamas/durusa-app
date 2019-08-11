@@ -5,6 +5,9 @@ export default StyleSheet.create({
   base: {
     marginBottom: 100
   },
+  lastItem: {
+    marginBottom: 40
+  },
   title: {
     ...fonts.default,
     marginLeft: 40,
@@ -19,9 +22,12 @@ export default StyleSheet.create({
   },
   separator: {
     width: 20,
-    height: 10
+    height: 20
   },
   lastItemMargin: {
     width: 70
+  },
+  verticalContainer: {
+    marginRight: 40
   }
 })

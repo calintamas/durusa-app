@@ -3,23 +3,24 @@ import { colors, fonts, styles } from '../../styles'
 
 export default StyleSheet.create({
   base: {
-    height: 240,
-    width: 156,
+    height: 100,
+    flex: 1,
+    backgroundColor: colors.purple,
     borderRadius: 16,
     overflow: 'hidden',
-    alignItems: 'center',
-    backgroundColor: colors.lightPurple
+    flexDirection: 'row'
   },
-  img: {
-    width: '100%',
+  imgContainer: {
+    width: 90,
     height: '100%'
   },
-  titleContainer: {
-    justifyContent: 'flex-end',
-    paddingHorizontal: 15,
+  img: {
+    flex: 1
+  },
+  contentContainer: {
     flex: 1,
-    flexWrap: 'wrap',
-    marginBottom: 10
+    padding: 15,
+    justifyContent: 'space-between'
   },
   title: {
     ...fonts.default,
