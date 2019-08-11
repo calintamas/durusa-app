@@ -18,7 +18,6 @@ export default StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
     width: 60,
-    // backgroundColor: 'pink',
     color: colors.white
   },
   separator: {
@@ -26,7 +25,6 @@ export default StyleSheet.create({
     fontSize: 28,
     fontWeight: 'bold',
     textAlign: 'center',
-    // width: 10,
     color: colors.white,
     marginTop: 5
   },

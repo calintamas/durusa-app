@@ -29,7 +29,7 @@ const getDefaultNavigationOptions = ({ navigation, headerLeftIconType = 'back', 
       shadowColor: 'transparent',
     },
     headerStyle: {
-      backgroundColor: colors.dusk,
+      backgroundColor: colors.darkPurple,
       borderBottomWidth: 0,
       elevation: 0,
       shadowOpacity: 0,

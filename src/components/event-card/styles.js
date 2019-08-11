@@ -13,39 +13,37 @@ const dropShadow = {
 
 export default StyleSheet.create({
   base: {
-    height: 130,
-    width: 150,
-    borderRadius: 5,
-    overflow: 'hidden'
+    height: 240,
+    width: 156,
+    borderRadius: 16,
+    overflow: 'hidden',
+    alignItems: 'center',
+    backgroundColor: colors.lightPurple
   },
-  overlay: {
-    position: 'absolute',
-    top: 0,
-    left: 0,
+  img: {
     width: '100%',
-    height: '100%',
-    backgroundColor: 'rgba(0, 0, 0, 0.4)',
-    justifyContent: 'flex-end',
-    alignItems: 'center'
+    height: '100%'
   },
   titleContainer: {
-    alignItems: 'center',
-    width: '80%',
+    justifyContent: 'flex-end',
+    paddingHorizontal: 15,
+    flex: 1,
+    flexWrap: 'wrap',
     marginBottom: 10
   },
   title: {
     ...fonts.default,
-    fontWeight: '700',
+    fontSize: 14,
+    fontWeight: 'normal',
     color: colors.white,
-    textAlign: 'center',
+    marginBottom: 2,
     ...dropShadow
   },
   hours: {
     ...fonts.default,
-    fontSize: 11,
-    fontWeight: '600',
+    fontSize: 10,
+    fontWeight: 'normal',
     color: colors.white,
-    textAlign: 'center',
     ...dropShadow
   }
 })

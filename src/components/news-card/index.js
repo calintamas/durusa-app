@@ -20,6 +20,9 @@ const getIconSource = (type = '') => {
     case 'rain':
       return icons.rain_green
 
+    case 'summerhills':
+      return icons.summerhills
+
     default:
       return null
   }

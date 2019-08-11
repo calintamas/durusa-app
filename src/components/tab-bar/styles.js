@@ -6,11 +6,11 @@ import { colors } from '../../styles'
 export default StyleSheet.create({
   base: {
     height: 55,
-    backgroundColor: colors.dusk,
+    backgroundColor: colors.lightPurple,
     flexDirection: 'row',
     elevation: 2,
     borderTopWidth: StyleSheet.hairlineWidth,
-    borderTopColor: 'rgba(0, 0, 0, .3)',
+    borderTopColor: 'rgba(0, 0, 0, .3)'
   },
   icon: {
     flex: 1,

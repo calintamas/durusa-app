@@ -3,24 +3,25 @@ import { colors, fonts } from '../../../styles'
 
 export default StyleSheet.create({
   base: {
-    marginBottom: 30
+    marginBottom: 100
   },
   title: {
     ...fonts.default,
-    marginLeft: 25,
+    marginLeft: 40,
     marginBottom: 20,
-    color: colors.white,
-    fontSize: 14,
-    fontWeight: '600'
+    color: colors.ligthGray,
+    fontSize: 18,
+    letterSpacing: 2,
+    textTransform: 'uppercase'
   },
   list: {
-    paddingLeft: 15
+    paddingLeft: 40
   },
   separator: {
-    width: 10,
+    width: 20,
     height: 10
   },
   lastItemMargin: {
-    width: 25
+    width: 70
   }
 })

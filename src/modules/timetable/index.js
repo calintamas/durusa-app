@@ -144,8 +144,7 @@ export default class Timetable extends Component {
           renderScene={this.renderScene}
           onIndexChange={this.onIndexChange}
           initialLayout={{ width: metrics.screenWidth, height: metrics.screenHeight }}
-          renderTabBar={this.renderTabBar}
-        />
+          renderTabBar={this.renderTabBar} />
       </SafeAreaView>
     )
   }

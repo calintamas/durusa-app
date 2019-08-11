@@ -9,6 +9,7 @@ import { images } from '../../assets'
 import { Firestore } from '../../services/firebase'
 import { setScrollViewRef } from '../../navigator/utils'
 import Time from '../../services/time'
+import config from '../../config'
 import styles from './styles'
 
 export default class Home extends Component {
@@ -69,7 +70,7 @@ export default class Home extends Component {
 
           {
             Time.isBeforeFestival(this.props.days)
-              ? <Countdown date={Time.getFestivalStartDate(this.props.days)} />
+              ? <Countdown date={Time.getFestivalStartDate(this.props.days, { start_hour: config.festival_start_hour })} />
               : null
           }
         </ImageBackground>

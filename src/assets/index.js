@@ -5,6 +5,7 @@ const icons = {
   heart_orange: require('./icons/heart-orange.png'),
   wind_green: require('./icons/wind-green.png'),
   rain_green: require('./icons/rain-green.png'),
+  summerhills: require('./icons/summerhills.png')
 }
 
 const images = {

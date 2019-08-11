@@ -12,7 +12,7 @@ const options = {
   tabBarOptions: {
     showLabel: false,
     style: {
-      backgroundColor: colors.dusk
+      backgroundColor: colors.darkPurple
     },
   },
   lazy: true,

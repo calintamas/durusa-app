@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import { View, Text, TouchableOpacity } from 'react-native'
+import { View, Text, TouchableOpacity, ImageBackground } from 'react-native'
 
-import Time from '../../services/time'
+import { images } from '../../assets'
 import styles from './styles'
 
 export default class HeaderTabBar extends Component {
@@ -12,9 +12,11 @@ export default class HeaderTabBar extends Component {
     const activeRoute = routes[activeRouteIndex];
 
     return (
-      <View style={styles.base}>
+      <ImageBackground
+        style={styles.base}
+        source={images.home_bg}>
+
         <Text style={styles.title}>{activeRoute.title}</Text>
-        <Text style={styles.subtitle}>{Time.getFestivalDay(activeRoute.date)}</Text>
 
         <View style={styles.container}>
           {
@@ -38,7 +40,7 @@ export default class HeaderTabBar extends Component {
           }
         </View>
 
-      </View>
+      </ImageBackground>
     );
   }
 }

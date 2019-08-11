@@ -4,6 +4,6 @@ import { colors } from '../../styles'
 export default StyleSheet.create({
   base: {
     flex: 1,
-    backgroundColor: colors.dusk
+    backgroundColor: colors.darkPurple
   }
 })

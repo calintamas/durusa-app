@@ -47,8 +47,9 @@ class Time {
     }
   }
 
-  static getFestivalStartDate(days = []) {
-    return moment(this.getFirstDay(days)).hour(12).format()
+  static getFestivalStartDate(days = [], options = {}) {
+    const startHour = options.start_hour || 12;
+    return moment(this.getFirstDay(days)).hour(startHour).format()
   }
 
   static getFirstDay(days = []) {

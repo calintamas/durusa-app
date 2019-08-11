@@ -3,8 +3,8 @@ import { colors, fonts } from '../../styles'
 
 export default StyleSheet.create({
   base: {
-    marginTop: 25,
-    marginLeft: 25
+    paddingTop: 30,
+    paddingHorizontal: 40
   },
   container: {
     flexDirection: 'row',
@@ -21,7 +21,7 @@ export default StyleSheet.create({
     fontSize: 12
   },
   item: {
-    width: 60,
+    flex: 1,
     height: 30,
     marginRight: 6,
     justifyContent: 'flex-end',
