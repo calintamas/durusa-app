@@ -26,7 +26,7 @@ export default StyleSheet.create({
     marginRight: 6,
     justifyContent: 'flex-end',
     alignItems: 'center',
-    paddingBottom: 5
+    paddingBottom: 10
   },
   itemLine: {
     height: 2,

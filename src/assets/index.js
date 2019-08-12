@@ -1,5 +1,17 @@
 const icons = {
   right_arrow_gray: require('./icons/right-arrow-gray.png'),
+  left_arrow_white: require('./icons/left-arrow-white.png'),
+
+  link_berry: require('./icons/link-berry.png'),
+  link_plum: require('./icons/link-plum.png'),
+  link_mint: require('./icons/link-mint.png'),
+  link_yellow: require('./icons/link-yellow.png'),
+  link_white: require('./icons/link-white.png'),
+  link_green: require('./icons/link-green.png'),
+
+  heart_filled: require('./icons/heart-filled.png'),
+  heart_empty: require('./icons/heart-empty.png'),
+
   share_yellow: require('./icons/share-yellow.png'),
   sunrise_pink: require('./icons/sunrise-pink.png'),
   heart_orange: require('./icons/heart-orange.png'),

@@ -5,7 +5,7 @@ const dropShadow = {
   },
   shadowRadius: 5,
   shadowOpacity: 0.1,
-  elevation: 2
+  elevation: 5
 }
 
 export default {

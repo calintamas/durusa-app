@@ -7,7 +7,7 @@ class Time {
   }
 
   static getHour(date = '') {
-    return moment(date).format('k:mm')
+    return moment(date).format('kk:mm')
   }
 
   static getEventHours(startDate, endDate) {
@@ -15,6 +15,14 @@ class Time {
       return 'All day'
     }
     return `${this.getHour(startDate)} - ${this.getHour(endDate)}`
+  }
+
+  static getEventDate(startDate, endDate) {
+    if (!startDate || !endDate) {
+      return 'All day'
+    }
+    const hours = this.getEventHours(startDate, endDate);
+    return `${moment(startDate).format('dddd D')}, ${hours}`
   }
 
   static getRelativeDate(date = '') {

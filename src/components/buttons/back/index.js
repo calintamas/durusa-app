@@ -8,8 +8,7 @@ const BackButton = (props) => {
     <IconButton
       style={props.style}
       onPress={props.onPress}
-      imgStyle={{ transform: [{ scaleX: -1 }] }}
-      icon={icons.right_arrow_yellow} />
+      icon={icons.left_arrow_white} />
   )
 };
 

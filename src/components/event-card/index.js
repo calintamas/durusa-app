@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, ImageBackground, Text } from 'react-native'
+import { View, ImageBackground, Text, TouchableOpacity } from 'react-native'
 
 import Time from '../../services/time'
 import styles from './styles'
@@ -8,11 +8,14 @@ const EventCard = (props) => {
   const data = props.data;
 
   return (
-    <View style={styles.base}>
+    <TouchableOpacity
+      style={styles.base}
+      onPress={props.onPress}>
       <ImageBackground
         style={styles.img}
         resizeMode='cover'
-        source={{ uri: data.photo_url }}>
+        source={{ uri: data.photo_url }}
+        borderRadius={16}>
 
       <View style={styles.titleContainer}>
         <Text
@@ -23,8 +26,7 @@ const EventCard = (props) => {
       </View>
 
       </ImageBackground>
-    </View>
-
+    </TouchableOpacity>
   )
 };
 

@@ -9,23 +9,23 @@ export default class StageRow extends Component {
   constructor(props) {
     super(props);
     this.renderItem = this.renderItem.bind(this);
+    this.goToEventItem = this.goToEventItem.bind(this);
   }
 
   keyExtractor(item, index) {
     return `${index}`
   }
 
-  renderItem({ item }) {
-    if (this.props.isVertical) {
-      return (
-        <ActivityEventCard
-          data={item} />
-      )
-    }
+  goToEventItem(data) {
+    this.props.navigation.navigate('EventItem', { data });
+  }
 
+  renderItem({ item }) {
+    const EventCardComponent = this.props.isVertical ? ActivityEventCard : EventCard;
     return (
-      <EventCard
-        data={item} />
+      <EventCardComponent
+        data={item}
+        onPress={() => this.goToEventItem({ ...item, location: this.props.title })} />
     )
   }
 

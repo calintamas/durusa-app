@@ -17,11 +17,11 @@ export default class DayContainer extends PureComponent {
     const {
       data,
       locations,
-      scrollViewRef
+      scrollViewRef,
+      navigation
     } = this.props;
 
     const snappyConfig = {
-      pagingEnabled: true,
       decelerationRate: 'fast',
       snapToAlignment: 'center',
       snapToOffsets: locations.map((_, index) => {
@@ -50,7 +50,8 @@ export default class DayContainer extends PureComponent {
                 title={location.name}
                 data={data[location.id]}
                 isVertical={location.id === 'location-order-3'}
-                isLast={index === locations.length - 1} />
+                isLast={index === locations.length - 1}
+                navigation={navigation} />
             )
           })
         }
