@@ -1,4 +1,6 @@
 import { StyleSheet } from 'react-native'
+import { ifIphoneX } from 'react-native-iphone-x-helper'
+
 import { colors, metrics, fonts } from '../../styles'
 
 export default StyleSheet.create({
@@ -35,7 +37,7 @@ export default StyleSheet.create({
   },
   backButtonContainer: {
     position: 'absolute',
-    top: 15,
+    ...ifIphoneX({ top: 30 }, { top: 15 }),
     left: 15,
     zIndex: 1,
     elevation: 1

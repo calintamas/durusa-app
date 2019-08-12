@@ -5,7 +5,7 @@ import { colors } from '../../styles'
 
 export default StyleSheet.create({
   base: {
-    height: 55,
+    height: 62,
     backgroundColor: colors.lightPurple,
     flexDirection: 'row',
     elevation: 2,
@@ -14,13 +14,13 @@ export default StyleSheet.create({
   },
   icon: {
     flex: 1,
-    paddingTop: 25,
+    paddingTop: 28,
     alignItems: 'center'
   },
   dotContainer: {
     position: 'absolute',
     left: 0,
     right: 0,
-    ...ifIphoneX({ bottom: 45 }, { bottom: 11 })
+    ...ifIphoneX({ bottom: 51 }, { bottom: 16 })
   }
 })
