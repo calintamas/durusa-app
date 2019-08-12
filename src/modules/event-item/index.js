@@ -11,8 +11,10 @@ export default class EventItem extends Component {
   constructor(props) {
     super(props);
     this.goBack = this.goBack.bind(this);
+    this.toggleFavorite = this.toggleFavorite.bind(this);
 
     this.state = {
+      id: null,
       start_date: '',
       end_date: '',
       name: '',
@@ -33,13 +35,16 @@ export default class EventItem extends Component {
     this.props.navigation.goBack();
   }
 
-  toggleFavorites() {
-
+  toggleFavorite() {
+    this.props.toggleFavorite(this.state.id);
   }
 
   render() {
+    const props = this.props;
+
     const state = this.state;
     const date = Time.getEventDate(state.start_date, state.end_date);
+    const isFavorited = props.favorites.indexOf(state.id) >= 0;
 
     return (
       <View style={styles.base}>
@@ -58,8 +63,8 @@ export default class EventItem extends Component {
           <View style={styles.heartButtonContainer}>
             <HeartButton
               color={state.color}
-              isActive={false}
-              onPress={this.toggleFavorites} />
+              isActive={isFavorited}
+              onPress={this.toggleFavorite} />
           </View>
 
           <View style={styles.contentContainer}>

@@ -1,7 +1,7 @@
 import { createStackNavigator } from 'react-navigation'
 
 import Timetable from '../../../modules/timetable/container'
-import EventItem from '../../../modules/event-item'
+import EventItem from '../../../modules/event-item/container'
 import { getDefaultNavigationOptions } from '../../navigation-options'
 
 const options = {

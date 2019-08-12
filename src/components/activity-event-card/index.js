@@ -2,6 +2,7 @@ import React from 'react'
 import { View, Image, Text, TouchableOpacity } from 'react-native'
 
 import Time from '../../services/time'
+import HeartIcon from '../heart-icon'
 import styles from './styles'
 
 const ActivityEventCard = (props) => {
@@ -11,6 +12,9 @@ const ActivityEventCard = (props) => {
     <TouchableOpacity
       style={styles.base}
       onPress={props.onPress}>
+
+      <HeartIcon isVisible={props.isFavorited} />
+
       <View style={styles.imgContainer}>
         <Image
           style={styles.img}

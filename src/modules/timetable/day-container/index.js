@@ -18,7 +18,8 @@ export default class DayContainer extends PureComponent {
       data,
       locations,
       scrollViewRef,
-      navigation
+      navigation,
+      favorites
     } = this.props;
 
     const snappyConfig = {
@@ -51,7 +52,8 @@ export default class DayContainer extends PureComponent {
                 data={data[location.id]}
                 isVertical={location.id === 'location-order-3'}
                 isLast={index === locations.length - 1}
-                navigation={navigation} />
+                navigation={navigation}
+                favorites={favorites} />
             )
           })
         }

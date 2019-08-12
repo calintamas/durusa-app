@@ -16,7 +16,7 @@ const options = {
     },
   },
   lazy: true,
-  // initialRouteName: 'Timetable'
+  initialRouteName: 'Timetable'
 };
 
 const DefaultNavigator = createBottomTabNavigator({

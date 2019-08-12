@@ -22,9 +22,11 @@ export default class StageRow extends Component {
 
   renderItem({ item }) {
     const EventCardComponent = this.props.isVertical ? ActivityEventCard : EventCard;
+    const isFavorited = this.props.favorites.indexOf(item.id) >= 0;
     return (
       <EventCardComponent
         data={item}
+        isFavorited={isFavorited}
         onPress={() => this.goToEventItem({ ...item, location: this.props.title })} />
     )
   }
@@ -43,7 +45,7 @@ export default class StageRow extends Component {
   }
 
   render() {
-    const { data, title, isVertical, isLast } = this.props;
+    const { data, title, isVertical, isLast, favorites } = this.props;
 
     const baseStyle = [
       styles.base,
@@ -61,6 +63,7 @@ export default class StageRow extends Component {
           showsHorizontalScrollIndicator={false}
           keyExtractor={this.keyExtractor}
           data={data}
+          extraData={favorites}
           renderItem={this.renderItem}
           ItemSeparatorComponent={this.renderItemSeparator}
           ListFooterComponent={this.renderListFooterComponent} />

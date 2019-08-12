@@ -85,7 +85,8 @@ export default class Timetable extends Component {
     const defaultProps = {
       refreshing: this.state.api.pending,
       onRefresh: this.onRefresh,
-      navigation: props.navigation
+      navigation: props.navigation,
+      favorites: props.favorites
     }
 
     switch (route.key) {
