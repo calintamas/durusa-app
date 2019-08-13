@@ -12,7 +12,10 @@ const get = async () => {
   const querySnapshot = await ref.get();
   const data = querySnapshot.docs.map((doc) => doc.data())
 
-  await Cache.set(CACHE_KEY, data, Cache.TTL_5D);
+  if (data && data.length) {
+    await Cache.set(CACHE_KEY, data, Cache.TTL_5D);
+  }
+  
   return data
 }
 
