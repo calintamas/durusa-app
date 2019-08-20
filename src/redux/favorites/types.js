@@ -1,5 +1,7 @@
 import { typeCreator } from 'reddeck'
 
 export default typeCreator(`
-  TOGGLE
+  TOGGLE,
+  ADD
+  REMOVE
 `, { prefix: 'favorites/' })

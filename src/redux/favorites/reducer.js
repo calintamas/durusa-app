@@ -11,21 +11,26 @@ const initialState = {
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case favoritesTypes.TOGGLE: {
-      const eventID = action.payload;
-      const isFavorited = state.all.data.indexOf(eventID) >= 0;
-      let newData = [...state.all.data];
-      if (isFavorited) {
-        newData = newData.filter((i) => i !== eventID)
-      } else {
-        newData = [...newData, eventID]
-      }
+    case favoritesTypes.ADD: {
+      const { eventID } = action.payload;
 
       return ({
         ...state,
         all: {
           ...state.all,
-          data: newData
+          data: [...state.all.data, eventID]
+        }
+      })
+    }
+
+    case favoritesTypes.REMOVE: {
+      const { eventID } = action.payload;
+
+      return ({
+        ...state,
+        all: {
+          ...state.all,
+          data: state.all.data.filter((i) => i !== eventID)
         }
       })
     }

@@ -36,7 +36,7 @@ export default class EventItem extends Component {
   }
 
   toggleFavorite() {
-    this.props.toggleFavorite(this.state.id);
+    this.props.toggleFavorite(this.state);
   }
 
   render() {

@@ -4,27 +4,16 @@ import config from '../../config'
 import deviceActions from '../../redux/device/actions'
 import store from '../../redux/store'
 
-// PN.localNotificationSchedule({
-//   //... You can use all the options from localNotifications
-//   message: "My Notification Message", // (required)
-//   date: new Date(Date.now() + 60 * 1000) // in 60 secs
-// });
-
 class PushNotifications {
   static configure() {
     PN.configure({
       // (optional) Called when Token is generated (iOS and Android)
       onRegister: function(token) {
-        console.log('token', token);
         store.dispatch(deviceActions.setToken(token));
       },
 
       // (required) Called when a remote or local notification is opened or received
       onNotification: function(notification) {
-        console.log('notification', notification);
-
-        // process the notification
-
         // required on iOS only (see fetchCompletionHandler docs: https://github.com/react-native-community/react-native-push-notification-ios)
         notification.finish('backgroundFetchResultNoData');
       },
@@ -50,6 +39,22 @@ class PushNotifications {
        */
       requestPermissions: true
     })
+  }
+
+  static scheduleNotification(payload = {}) {
+    return PN.localNotificationSchedule({
+      id: payload.id,
+      userInfo: { id: payload.id },
+      title: payload.title,
+      message: payload.message,
+      date: payload.date
+    });
+  }
+
+  static cancelNotification(notificaitonID = '') {
+    return PN.cancelLocalNotifications({
+      id: `${notificaitonID}`
+    });
   }
 }
 
