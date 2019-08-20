@@ -109,3 +109,5 @@ android/build/intermediates/*
 
 android/app/dsh-upload-key.keystore
 android/fastlane-supply-calinntamas.json
+
+env.json

@@ -47,6 +47,7 @@
 		FE089D9B22EDDC8F003A3261 /* Montserrat-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FE089D9822EDDC8F003A3261 /* Montserrat-Italic.ttf */; };
 		FE089D9C22EDDC8F003A3261 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FE089D9922EDDC8F003A3261 /* Montserrat-Regular.ttf */; };
 		FE0B343A22F6F7CC006DA74E /* libRNCAsyncStorage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FE0B343422F6F7C7006DA74E /* libRNCAsyncStorage.a */; };
+		FE0F91FA230C0433003A3CF8 /* libRNCPushNotificationIOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FE0F91CE230C042C003A3CF8 /* libRNCPushNotificationIOS.a */; };
 		FEBA9FE922C91645000B1F2D /* libRNGestureHandler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FEBA9F9022C915B7000B1F2D /* libRNGestureHandler.a */; };
 		FEF7218922E72EFE002B9561 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FEF7216122E72EFE002B9561 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
@@ -318,6 +319,13 @@
 			remoteGlobalIDString = 134814201AA4EA6300B7C361;
 			remoteInfo = RNCAsyncStorage;
 		};
+		FE0F91CD230C042C003A3CF8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FE0F91C9230C042C003A3CF8 /* PushNotificationIOS.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9B97F66B220DEC6000B61540;
+			remoteInfo = RNCPushNotificationIOS;
+		};
 		FEBA9F8522C915B7000B1F2D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 146833FF1AC3E56700842450 /* React.xcodeproj */;
@@ -409,6 +417,8 @@
 		FE089D9822EDDC8F003A3261 /* Montserrat-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Italic.ttf"; path = "../../src/assets/fonts/Montserrat-Italic.ttf"; sourceTree = "<group>"; };
 		FE089D9922EDDC8F003A3261 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Regular.ttf"; path = "../../src/assets/fonts/Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 		FE0B340822F6F7C7006DA74E /* RNCAsyncStorage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNCAsyncStorage.xcodeproj; path = "../node_modules/@react-native-community/async-storage/ios/RNCAsyncStorage.xcodeproj"; sourceTree = "<group>"; };
+		FE0F91C9230C042C003A3CF8 /* PushNotificationIOS.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PushNotificationIOS.xcodeproj; path = "../node_modules/@react-native-community/push-notification-ios/ios/PushNotificationIOS.xcodeproj"; sourceTree = "<group>"; };
+		FE0F924D230C08AB003A3CF8 /* DurusaApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = DurusaApp.entitlements; path = DurusaApp/DurusaApp.entitlements; sourceTree = "<group>"; };
 		FEF7216122E72EFE002B9561 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -425,6 +435,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE0F91FA230C0433003A3CF8 /* libRNCPushNotificationIOS.a in Frameworks */,
 				FE0B343A22F6F7CC006DA74E /* libRNCAsyncStorage.a in Frameworks */,
 				FE089D4D22EC5B33003A3261 /* libRNReanimated.a in Frameworks */,
 				FEBA9FE922C91645000B1F2D /* libRNGestureHandler.a in Frameworks */,
@@ -555,6 +566,7 @@
 		13B07FAE1A68108700A75B9A /* DurusaApp */ = {
 			isa = PBXGroup;
 			children = (
+				FE0F924D230C08AB003A3CF8 /* DurusaApp.entitlements */,
 				FEF7216122E72EFE002B9561 /* GoogleService-Info.plist */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
@@ -631,6 +643,7 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				FE0F91C9230C042C003A3CF8 /* PushNotificationIOS.xcodeproj */,
 				FE0B340822F6F7C7006DA74E /* RNCAsyncStorage.xcodeproj */,
 				FE089D1C22EC5B2D003A3261 /* RNReanimated.xcodeproj */,
 				5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */,
@@ -720,6 +733,14 @@
 			isa = PBXGroup;
 			children = (
 				FE0B343422F6F7C7006DA74E /* libRNCAsyncStorage.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FE0F91CA230C042C003A3CF8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FE0F91CE230C042C003A3CF8 /* libRNCPushNotificationIOS.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -843,6 +864,14 @@
 					};
 					13B07F861A680F5B00A75B9A = {
 						DevelopmentTeam = 7D4U8FN3SS;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					2D02E47A1E0B4A5D006451C7 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -867,6 +896,10 @@
 			productRefGroup = 83CBBA001A601CBA00E9B192 /* Products */;
 			projectDirPath = "";
 			projectReferences = (
+				{
+					ProductGroup = FE0F91CA230C042C003A3CF8 /* Products */;
+					ProjectRef = FE0F91C9230C042C003A3CF8 /* PushNotificationIOS.xcodeproj */;
+				},
 				{
 					ProductGroup = 00C302A81ABCB8CE00DB3ED1 /* Products */;
 					ProjectRef = 00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */;
@@ -1195,6 +1228,13 @@
 			remoteRef = FE0B343322F6F7C7006DA74E /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		FE0F91CE230C042C003A3CF8 /* libRNCPushNotificationIOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNCPushNotificationIOS.a;
+			remoteRef = FE0F91CD230C042C003A3CF8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		FEBA9F8622C915B7000B1F2D /* libjsi.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -1496,6 +1536,7 @@
 			baseConfigurationReference = BBE0AEBF2DB77590DB06094A /* Pods-DurusaApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = DurusaApp/DurusaApp.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_TEAM = 7D4U8FN3SS;
@@ -1503,6 +1544,7 @@
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-gesture-handler/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-firebase/ios/RNFirebase/**",
+					"$(SRCROOT)/../node_modules/@react-native-community/push-notification-ios/ios/**",
 				);
 				INFOPLIST_FILE = DurusaApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1522,12 +1564,14 @@
 			baseConfigurationReference = EBDC4CAE839317454AD47FC1 /* Pods-DurusaApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = DurusaApp/DurusaApp.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7D4U8FN3SS;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-gesture-handler/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-firebase/ios/RNFirebase/**",
+					"$(SRCROOT)/../node_modules/@react-native-community/push-notification-ios/ios/**",
 				);
 				INFOPLIST_FILE = DurusaApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

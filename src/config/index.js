@@ -1,3 +1,5 @@
+import env from '../../env.json'
+
 const config = {
   days: [
     {
@@ -17,7 +19,9 @@ const config = {
     }
   ],
   switch_day_hour: 10, // hour after which a new festival day starts 🙈
-  festival_start_hour: 12
+  festival_start_hour: 12,
+
+  firebase_sender_id: env.FIREBASE_SENDER_ID
 }
 
 export default config
