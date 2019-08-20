@@ -1,0 +1,70 @@
+fastlane_version "2.57.2"
+
+app_identifier = "dev.calintamas.durusa"
+
+platform :android do
+  desc "Submit a new build to Google Play Console"
+  lane :beta do
+    gradle_file = "./android/app/build.gradle"
+    android_set_version_name(
+      version_name: "1.0.0",
+      gradle_file: gradle_file
+    )
+
+    android_set_version_code(
+      # version_code: 1, # optional, if not specified, Version Code will be incremented
+      gradle_file: gradle_file
+    )
+
+    gradle(
+      project_dir: './android',
+      task: 'assemble',
+      build_type: 'Release'
+    )
+
+    supply(
+      json_key: './android/fastlane-supply-calinntamas.json',
+      track: 'alpha',
+      apk: './android/app/build/outputs/apk/release/app-release.apk',
+      package_name: app_identifier
+      # skip_upload_apk: true
+    )
+  end
+end
+
+platform :ios do
+  desc 'Submit a new build to TestFlight'
+  desc 'This will also make sure the profile is up to date'
+  lane :beta do
+    cert(username: ENV['FASTLANE_EMAIL_PERSONAL'])
+    sigh(app_identifier: app_identifier)
+
+    increment_version_number(
+      xcodeproj: './ios/DurusaApp.xcodeproj',
+      # bump_type: 'patch',
+      # bump_type: 'minor',
+      # bump_type: 'major',
+      version_number: '1.0.0'
+    )
+    increment_build_number(
+      xcodeproj: './ios/DurusaApp.xcodeproj',
+      # build_number: '1'
+    )
+    gym(
+      workspace: './ios/DurusaApp.xcworkspace',
+      scheme: 'DurusaApp',
+      export_xcargs: '-allowProvisioningUpdates'
+    )
+
+    pilot(
+      app_identifier: app_identifier,
+      email: ENV['FASTLANE_EMAIL_PERSONAL'],
+      first_name: ENV['FASTLANE_FIRST_NAME'],
+      last_name: ENV['FASTLANE_LAST_NAME'],
+      ipa: "./DurusaApp.ipa",
+      distribute_external: true,
+      skip_submission: true,
+      skip_waiting_for_build_processing: false
+    )
+  end
+end

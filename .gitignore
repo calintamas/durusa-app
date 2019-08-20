@@ -103,3 +103,9 @@ android/*.jsbundle.map
 
 ios/GoogleService-Info.plist
 android/app/google-services.json
+
+android/build/intermediates/*
+*.dSYM.zip
+
+android/app/dsh-upload-key.keystore
+android/fastlane-supply-calinntamas.json
