@@ -71,7 +71,14 @@ export default class EventItem extends Component {
             <Text style={styles.titleText}>{state.name}</Text>
             <Text style={styles.dateText}>{`${date} @ ${state.location}`}</Text>
 
-            <Text style={styles.paragraph}>{state.description}</Text>
+            {
+              state.description.split(' // ').map((p, index) => {
+                p = p.trim().replace('// ', '')
+                return (
+                  <Text key={index} style={styles.paragraph}>{p}</Text>
+                )
+              })
+            }
 
             {
               state.web_url.map((link, index) => {

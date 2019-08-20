@@ -5,6 +5,13 @@ import StageRow from '../stage-row'
 import styles from './styles'
 
 export default class DayContainer extends PureComponent {
+  constructor(props) {
+    super(props);
+    this.state = {
+      rowHeights: new Array(props.locations.length).fill(340)
+    }
+  }
+
   renderRefreshControl(props) {
     return (
       <RefreshControl
@@ -22,15 +29,17 @@ export default class DayContainer extends PureComponent {
       favorites
     } = this.props;
 
+    const rowHeights = this.state.rowHeights;
     const snappyConfig = {
       decelerationRate: 'fast',
-      snapToAlignment: 'center',
+      snapToAlignment: 'start',
+      snapToEnd: false,
       snapToOffsets: locations.map((_, index) => {
         const offset = index !== 0 ? 55 : 0;
         if (index === locations.length - 1) {
-          return 0
+          return index * (rowHeights[index - 1] + offset)
         }
-        return index * (340 + offset)
+        return index * (rowHeights[index] + offset)
       })
     };
 

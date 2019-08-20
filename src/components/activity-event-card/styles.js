@@ -19,6 +19,7 @@ export default StyleSheet.create({
   },
   contentContainer: {
     flex: 1,
+    flexWrap: 'wrap',
     padding: 15,
     justifyContent: 'space-between'
   },
@@ -28,6 +29,7 @@ export default StyleSheet.create({
     fontWeight: 'normal',
     color: colors.white,
     marginBottom: 2,
+    marginRight: 20,
     ...styles.dropShadow
   },
   hours: {

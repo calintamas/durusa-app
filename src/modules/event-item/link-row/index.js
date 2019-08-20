@@ -62,7 +62,7 @@ export default class LinkRow extends Component {
             source={getImgSource(props.color)} />
         </View>
 
-        <TouchableOpacity onPress={this.openLink}>
+        <TouchableOpacity style={styles.linkContainer} onPress={this.openLink}>
           <Text
             style={textStyle}>
             {props.link}

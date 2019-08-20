@@ -16,6 +16,10 @@ export default StyleSheet.create({
   img: {
     flex: 1
   },
+  linkContainer: {
+    flexWrap: 'wrap',
+    flex: 1
+  },
   linkText: {
     ...fonts.default,
     color: colors.white,
