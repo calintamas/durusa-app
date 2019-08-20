@@ -1,4 +1,5 @@
 import PN from 'react-native-push-notification'
+import firebase from 'react-native-firebase'
 
 import config from '../../config'
 import deviceActions from '../../redux/device/actions'
@@ -8,8 +9,12 @@ class PushNotifications {
   static configure() {
     PN.configure({
       // (optional) Called when Token is generated (iOS and Android)
-      onRegister: function(token) {
-        store.dispatch(deviceActions.setToken(token));
+      onRegister: async function(token) {
+        const fcmToken = await firebase.messaging().getToken();
+        store.dispatch(deviceActions.setToken({
+          token: fcmToken,
+          os: token.os
+        }));
       },
 
       // (required) Called when a remote or local notification is opened or received

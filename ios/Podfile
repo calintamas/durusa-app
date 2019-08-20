@@ -10,4 +10,5 @@ target 'DurusaApp' do
   pod 'Firebase/Core', '~> 6.3.0'
   pod 'Firebase/Analytics', '~> 6.3.0'
   pod 'Firebase/Firestore', '~> 6.3.0'
+  pod 'Firebase/Messaging', '~> 6.3.0'
 end
