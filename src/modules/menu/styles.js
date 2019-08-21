@@ -19,5 +19,9 @@ export default StyleSheet.create({
     left: 0,
     right: 0,
     zIndex: 1
+  },
+  headerIcon: {
+    width: 48,
+    height: 48
   }
 })

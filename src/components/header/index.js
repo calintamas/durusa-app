@@ -13,7 +13,7 @@ const Header = (props) => {
         activeOpacity={props.onPressLeft ? undefined : 1}>
         <Image
           source={props.leftIcon || icons.left_arrow_white}
-          style={styles.img}
+          style={[styles.img, props.iconStyle]}
           resizeMode='contain' />
       </TouchableOpacity>
 

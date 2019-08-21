@@ -27,6 +27,7 @@ export default class Menu extends Component {
           style={styles.bg}
           source={images.home_bg}>
         <Header
+          iconStyle={styles.headerIcon}
           leftIcon={icons.summerhills}
           title='Summer Hills info' />
           <ScrollView>
@@ -57,7 +58,7 @@ export default class Menu extends Component {
         <View style={styles.appVersionContainer}>
           <AppVersion />
         </View>
-        
+
       </SafeAreaView>
     );
   }
