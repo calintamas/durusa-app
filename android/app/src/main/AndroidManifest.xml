@@ -1,5 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-  package="dev.calintamas.durusa">
+    xmlns:tools="http://schemas.android.com/tools"
+    package="dev.calintamas.durusa">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <!-- for localNotificationSchedule() -->
@@ -17,7 +18,8 @@
       android:icon="@mipmap/ic_launcher"
       android:roundIcon="@mipmap/ic_launcher_round"
       android:allowBackup="false"
-      android:theme="@style/AppTheme">
+      android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
         <meta-data  android:name="com.dieam.reactnativepushnotification.notification_channel_name"
             android:value="YOUR NOTIFICATION CHANNEL NAME"/>
         <meta-data  android:name="com.dieam.reactnativepushnotification.notification_channel_description"
@@ -26,17 +28,17 @@
         <meta-data  android:name="com.dieam.reactnativepushnotification.notification_color"
             android:resource="@android:color/white"/>
 
-        <!-- < Only if you're using GCM or localNotificationSchedule() > -->
-        <receiver
-            android:name="com.google.android.gms.gcm.GcmReceiver"
-            android:exported="true"
-            android:permission="com.google.android.c2dm.permission.SEND" >
-            <intent-filter>
-                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
-                <category android:name="${applicationId}" />
-            </intent-filter>
-        </receiver>
-        <!-- < Only if you're using GCM or localNotificationSchedule() > -->
+        <!--&lt;!&ndash; < Only if you're using GCM or localNotificationSchedule() > &ndash;&gt;-->
+        <!--<receiver-->
+            <!--android:name="com.google.android.gms.gcm.GcmReceiver"-->
+            <!--android:exported="true"-->
+            <!--android:permission="com.google.android.c2dm.permission.SEND" >-->
+            <!--<intent-filter>-->
+                <!--<action android:name="com.google.android.c2dm.intent.RECEIVE" />-->
+                <!--<category android:name="${applicationId}" />-->
+            <!--</intent-filter>-->
+        <!--</receiver>-->
+        <!--&lt;!&ndash; < Only if you're using GCM or localNotificationSchedule() > &ndash;&gt;-->
 
         <receiver android:name="com.dieam.reactnativepushnotification.modules.RNPushNotificationPublisher" />
         <receiver android:name="com.dieam.reactnativepushnotification.modules.RNPushNotificationBootEventReceiver">
@@ -46,15 +48,15 @@
         </receiver>
         <service android:name="com.dieam.reactnativepushnotification.modules.RNPushNotificationRegistrationService"/>
 
-        <!-- < Only if you're using GCM or localNotificationSchedule() > -->
-        <service
-            android:name="com.dieam.reactnativepushnotification.modules.RNPushNotificationListenerServiceGcm"
-            android:exported="false" >
-            <intent-filter>
-                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
-            </intent-filter>
-        </service>
-        <!-- </ Only if you're using GCM or localNotificationSchedule() > -->
+        <!--&lt;!&ndash; < Only if you're using GCM or localNotificationSchedule() > &ndash;&gt;-->
+        <!--<service-->
+            <!--android:name="com.dieam.reactnativepushnotification.modules.RNPushNotificationListenerServiceGcm"-->
+            <!--android:exported="false" >-->
+            <!--<intent-filter>-->
+                <!--<action android:name="com.google.android.c2dm.intent.RECEIVE" />-->
+            <!--</intent-filter>-->
+        <!--</service>-->
+        <!--&lt;!&ndash; </ Only if you're using GCM or localNotificationSchedule() > &ndash;&gt;-->
 
         <service
             android:name="com.dieam.reactnativepushnotification.modules.RNPushNotificationListenerService"

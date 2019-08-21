@@ -10,7 +10,6 @@ import com.swmansion.reanimated.ReanimatedPackage;
 import io.invertase.firebase.RNFirebasePackage;
 import io.invertase.firebase.analytics.RNFirebaseAnalyticsPackage;
 import io.invertase.firebase.firestore.RNFirebaseFirestorePackage;
-import io.invertase.firebase.messaging.RNFirebaseMessagingPackage;
 
 import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
 
@@ -40,8 +39,7 @@ public class MainApplication extends Application implements ReactApplication {
           new RNGestureHandlerPackage(),
           new RNFirebasePackage(),
           new RNFirebaseAnalyticsPackage(),
-          new RNFirebaseFirestorePackage(),
-          new RNFirebaseMessagingPackage()
+          new RNFirebaseFirestorePackage()
       );
     }
 
