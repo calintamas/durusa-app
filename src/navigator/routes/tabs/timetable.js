@@ -5,7 +5,8 @@ import EventItem from '../../../modules/event-item/container'
 import { getDefaultNavigationOptions } from '../../navigation-options'
 
 const options = {
-  navigationOptions: (props) => getDefaultNavigationOptions(props)
+  navigationOptions: (props) => getDefaultNavigationOptions(props),
+  cardStyle: { opacity: 1 }
 }
 
 const TimetableTab = createStackNavigator({

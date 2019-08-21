@@ -24,6 +24,11 @@ class Firestore {
 
     ref.set({ token, os });
   }
+
+  static saveEmail(email) {
+    const ref = this.getCollectionRef('emails').doc(email);
+    ref.set({ email });
+  }
 }
 
 export default Firestore

@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import appActions from './redux/app/actions'
 
+import EmailModal from './components/modals/email'
 import AppStateHandler from './components/app-state-handler/container'
 import NotificationHandler from './components/notification-handler'
 import { getActiveRouteName, getActiveTab } from './navigator/utils'
@@ -45,6 +46,7 @@ class Root extends Component {
         <RootNavigator onNavigationStateChange={this.onNavigationStateChange} />
         <NotificationHandler />
         <AppStateHandler />
+        <EmailModal ref={(ref) => EmailModal.setRef(ref)} />
       </View>
     );
   }

@@ -2,6 +2,9 @@ const icons = {
   right_arrow_gray: require('./icons/right-arrow-gray.png'),
   left_arrow_white: require('./icons/left-arrow-white.png'),
 
+  close_rounded: require('./icons/close-rounded.png'),
+  email: require('./icons/email.png'),
+
   link_berry: require('./icons/link-berry.png'),
   link_plum: require('./icons/link-plum.png'),
   link_mint: require('./icons/link-mint.png'),

@@ -9,7 +9,8 @@ import Map from '../../../modules/map'
 import { getDefaultNavigationOptions } from '../../navigation-options'
 
 const options = {
-  navigationOptions: (props) => getDefaultNavigationOptions(props)
+  navigationOptions: (props) => getDefaultNavigationOptions(props),
+  cardStyle: { opacity: 1 }
 }
 
 const screenOptions = {

@@ -1,12 +1,9 @@
 import { StyleSheet } from 'react-native'
 
-const SIZE = 24;
 export default StyleSheet.create({
   base: {
-    padding: 15
-  },
-  img: {
-    width: SIZE,
-    height: SIZE
+    flex: 1,
+    alignItems: 'center',
+    backgroundColor: 'rgba(0, 0, 0, .5)',
   }
 })

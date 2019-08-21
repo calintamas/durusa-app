@@ -8,7 +8,7 @@ const CloseButton = (props) => {
     <IconButton
       style={props.style}
       onPress={props.onPress}
-      icon={icons.close_white} />
+      icon={icons.close_rounded} />
   )
 };
 
