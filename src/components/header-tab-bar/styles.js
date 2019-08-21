@@ -13,7 +13,8 @@ export default StyleSheet.create({
     ...fonts.default,
     color: colors.white,
     fontWeight: '800',
-    fontSize: 28
+    fontSize: 24,
+    marginBottom: 5
   },
   subtitle: {
     ...fonts.default,
@@ -29,7 +30,7 @@ export default StyleSheet.create({
     paddingBottom: 10
   },
   itemLine: {
-    height: 2,
+    height: 3,
     width: '100%',
     backgroundColor: colors.darkGray,
     marginBottom: 2

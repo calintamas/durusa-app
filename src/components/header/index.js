@@ -10,8 +10,7 @@ const Header = (props) => {
       <TouchableOpacity
         style={styles.leftButton}
         onPress={props.onPressLeft}
-        activeOpacity={props.onPressLeft ? undefined : 1}
-        >
+        activeOpacity={props.onPressLeft ? undefined : 1}>
         <Image
           source={props.leftIcon || icons.left_arrow_white}
           style={styles.img}

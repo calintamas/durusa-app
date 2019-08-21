@@ -26,10 +26,19 @@ const addZeroPrefix = (nr = null) => {
   return nr < 10 ? `0${nr}` : `${nr}`
 }
 
+const getParagraphs = (text = '') => {
+  try {
+    return text.split('//').map((i) => i.trim())
+  } catch (err) {
+    return []
+  }
+}
+
 export {
   countSubstringOccurences,
   capitalizeFirstLetter,
   toLowerCase,
   toUpperCase,
-  addZeroPrefix
+  addZeroPrefix,
+  getParagraphs
 }

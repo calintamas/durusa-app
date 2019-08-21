@@ -10,7 +10,7 @@ const MenuRow = (props) => {
       onPress={props.onPress}>
       <View style={styles.imgContainer}>
         <Image
-          source={props.img}
+          source={props.icon}
           style={styles.img}
           resizeMode='contain' />
       </View>

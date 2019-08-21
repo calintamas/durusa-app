@@ -12,5 +12,5 @@ export default StyleSheet.create({
   },
   bgImg: {
     height: metrics.screenHeight * 0.5
-  },
+  }
 })

@@ -9,7 +9,7 @@ export default StyleSheet.create({
     paddingRight: 30
   },
   leftButton: {
-    height: 80,
+    height: 67,
     paddingHorizontal: 30,
     paddingVertical: 15,
     justifyContent: 'center',
@@ -17,7 +17,7 @@ export default StyleSheet.create({
   },
   img: {
     height: 48,
-    width: 48
+    width: 32
   },
   titleContainer: {
     flex: 1,

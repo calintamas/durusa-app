@@ -13,7 +13,7 @@ export default StyleSheet.create({
     marginLeft: 40,
     marginBottom: 20,
     color: colors.ligthGray,
-    fontSize: 18,
+    fontSize: 16,
     letterSpacing: 2,
     textTransform: 'uppercase'
   },

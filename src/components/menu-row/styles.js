@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native'
-import { fonts } from '../../styles'
+import { fonts, colors } from '../../styles'
 
 export default StyleSheet.create({
   base: {
@@ -7,11 +7,13 @@ export default StyleSheet.create({
     height: 60,
     marginBottom: 20,
     flexDirection: 'row',
-    alignItems: 'center'
+    alignItems: 'center',
+    paddingHorizontal: 40
   },
   imgContainer: {
     width: 24,
-    height: 24
+    height: 24,
+    marginRight: 30
   },
   img: {
     flex: 1
@@ -21,6 +23,7 @@ export default StyleSheet.create({
   },
   text: {
     ...fonts.default,
-    fontSize: 16
+    fontSize: 16,
+    color: colors.white
   }
 })

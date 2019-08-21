@@ -37,7 +37,7 @@ export default StyleSheet.create({
   },
   backButtonContainer: {
     position: 'absolute',
-    ...ifIphoneX({ top: 30 }, { top: 15 }),
+    ...ifIphoneX({ top: 37 }, { top: 22 }),
     left: 15,
     zIndex: 1,
     elevation: 1
@@ -51,5 +51,8 @@ export default StyleSheet.create({
     right: 30,
     zIndex: 3,
     elevation: 1
+  },
+  textBlockBase: {
+    paddingHorizontal: 0
   }
 })

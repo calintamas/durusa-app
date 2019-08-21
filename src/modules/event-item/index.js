@@ -5,6 +5,7 @@ import BackButton from '../../components/buttons/back'
 import LinkRow from './link-row'
 import HeartButton from './heart-button'
 import Time from '../../services/time'
+import TextBlock from '../../components/text-block'
 import styles from './styles'
 
 export default class EventItem extends Component {
@@ -71,14 +72,9 @@ export default class EventItem extends Component {
             <Text style={styles.titleText}>{state.name}</Text>
             <Text style={styles.dateText}>{`${date} @ ${state.location}`}</Text>
 
-            {
-              state.description.split(' // ').map((p, index) => {
-                p = p.trim().replace('// ', '')
-                return (
-                  <Text key={index} style={styles.paragraph}>{p}</Text>
-                )
-              })
-            }
+            <TextBlock
+              text={state.description}
+              baseStyle={styles.textBlockBase} />
 
             {
               state.web_url.map((link, index) => {
