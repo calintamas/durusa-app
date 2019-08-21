@@ -8,6 +8,13 @@ import Time from '../../services/time'
 import TextBlock from '../../components/text-block'
 import styles from './styles'
 
+const getDateText = (date, location) => {
+  if (location !== 'Activities') {
+    return `${date} @ ${location}`
+  }
+  return `${date}`
+}
+
 export default class EventItem extends Component {
   constructor(props) {
     super(props);
@@ -70,7 +77,7 @@ export default class EventItem extends Component {
 
           <View style={styles.contentContainer}>
             <Text style={styles.titleText}>{state.name}</Text>
-            <Text style={styles.dateText}>{`${date} @ ${state.location}`}</Text>
+            <Text style={styles.dateText}>{getDateText(date, state.location)}</Text>
 
             <TextBlock
               text={state.description}

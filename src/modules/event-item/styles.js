@@ -20,7 +20,8 @@ export default StyleSheet.create({
     fontSize: 20,
     fontWeight: 'bold',
     color: colors.white,
-    marginBottom: 10
+    marginBottom: 10,
+    marginRight: 20
   },
   dateText: {
     ...fonts.default,

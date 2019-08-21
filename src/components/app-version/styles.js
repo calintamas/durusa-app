@@ -9,6 +9,6 @@ export default StyleSheet.create({
   text: {
     ...fonts.default,
     fontSize: 10,
-    color: colors.white
+    color: colors.purple
   }
 })
