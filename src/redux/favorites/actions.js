@@ -1,21 +1,10 @@
 import favoritesAC from './action-creators'
 import favoritesSelectors from './selectors'
 import PushNotifications from '../../services/notifications'
-
-const _getScheduleDate = (startDate) => {
-  const now = new Date().valueOf();
-  const eventDate = new Date(startDate).valueOf();
-  const HALF_HOUR = 30 * 60 * 1000;
-
-  if (now > eventDate || now > eventDate - HALF_HOUR) {
-    return null
-  }
-
-  return eventDate - HALF_HOUR
-}
+import Time from '../../services/time'
 
 const add = (eventData = {}) => async (dispatch, getState) => {
-  const scheduleDate = _getScheduleDate(eventData.start_date);
+  const scheduleDate = Time.getScheduleDate(eventData.start_date);
 
   if (scheduleDate) {
     PushNotifications.scheduleNotification({

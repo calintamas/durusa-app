@@ -6,6 +6,17 @@ class Time {
     return someDate ? moment(someDate) : moment()
   }
 
+  static getScheduleDate(startDate) {
+    const now = this._getNow();
+    const eventDate = moment(startDate);
+    const halfHourBeforeEventDate = moment(startDate).subtract(30, 'minutes');
+
+    if (now.isAfter(eventDate) || now.isAfter(halfHourBeforeEventDate)) {
+      return null
+    }
+    return halfHourBeforeEventDate.toDate()
+  }
+
   static getHour(date = '') {
     return moment(date).format('kk:mm')
   }
