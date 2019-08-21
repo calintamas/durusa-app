@@ -8,6 +8,7 @@ import HeaderTabBar from '../../components/header-tab-bar'
 import { Firestore } from '../../services/firebase'
 import { setScrollViewRef } from '../../navigator/utils'
 import { metrics } from '../../styles'
+import { isIOS } from '../../utils/platform'
 import { groupData } from './utils'
 import styles from './styles'
 
@@ -141,7 +142,7 @@ export default class Timetable extends Component {
       <SafeAreaView style={styles.base}>
         <TabView
           lazy
-          swipeEnabled
+          swipeEnabled={isIOS}
           navigationState={props.header}
           renderScene={this.renderScene}
           onIndexChange={this.onIndexChange}

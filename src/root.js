@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import appActions from './redux/app/actions'
 
+import AppStateHandler from './components/app-state-handler/container'
 import NotificationHandler from './components/notification-handler'
 import { getActiveRouteName, getActiveTab } from './navigator/utils'
 import RootNavigator from './navigator'
@@ -43,6 +44,7 @@ class Root extends Component {
       <View style={styles.base}>
         <RootNavigator onNavigationStateChange={this.onNavigationStateChange} />
         <NotificationHandler />
+        <AppStateHandler />
       </View>
     );
   }
