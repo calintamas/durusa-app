@@ -7,6 +7,10 @@ class Time {
   }
 
   static getScheduleDate(startDate) {
+    if (!startDate) {
+      return null
+    }
+    
     const now = this._getNow();
     const eventDate = moment(startDate);
     const halfHourBeforeEventDate = moment(startDate).subtract(30, 'minutes');
