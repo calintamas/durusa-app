@@ -17,7 +17,13 @@ const icons = {
   heart_orange: require('./icons/heart-orange.png'),
   wind_green: require('./icons/wind-green.png'),
   rain_green: require('./icons/rain-green.png'),
-  summerhills: require('./icons/summerhills.png')
+  summerhills: require('./icons/summerhills.png'),
+
+  camping_white: require('./icons/camping-white.png'),
+  food_white: require('./icons/food-white.png'),
+  general_info_white: require('./icons/general-info-white.png'),
+  map_white: require('./icons/map-white.png'),
+  payment_white: require('./icons/payment-white.png')
 }
 
 const images = {
