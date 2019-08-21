@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
-import { ScrollView, ImageBackground } from 'react-native'
+import { ScrollView, ImageBackground, View } from 'react-native'
 import { SafeAreaView } from 'react-navigation'
 
+import AppVersion from '../../components/app-version'
 import Header from '../../components/header'
 import MenuRow from '../../components/menu-row'
 import Separator from '../../components/separator'
@@ -52,6 +53,11 @@ export default class Menu extends Component {
               onPress={() => this.goTo('Map')} />
           </ScrollView>
         </ImageBackground>
+
+        <View style={styles.appVersionContainer}>
+          <AppVersion />
+        </View>
+        
       </SafeAreaView>
     );
   }

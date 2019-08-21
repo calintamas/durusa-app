@@ -48,6 +48,7 @@
 		FE089D9C22EDDC8F003A3261 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FE089D9922EDDC8F003A3261 /* Montserrat-Regular.ttf */; };
 		FE0B343A22F6F7CC006DA74E /* libRNCAsyncStorage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FE0B343422F6F7C7006DA74E /* libRNCAsyncStorage.a */; };
 		FE0F91FA230C0433003A3CF8 /* libRNCPushNotificationIOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FE0F91CE230C042C003A3CF8 /* libRNCPushNotificationIOS.a */; };
+		FE725384230DC1B80039D467 /* libRNDeviceInfo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FE72537C230DC1B20039D467 /* libRNDeviceInfo.a */; };
 		FEBA9FE922C91645000B1F2D /* libRNGestureHandler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FEBA9F9022C915B7000B1F2D /* libRNGestureHandler.a */; };
 		FEF7218922E72EFE002B9561 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FEF7216122E72EFE002B9561 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
@@ -326,6 +327,20 @@
 			remoteGlobalIDString = 9B97F66B220DEC6000B61540;
 			remoteInfo = RNCPushNotificationIOS;
 		};
+		FE72537B230DC1B20039D467 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FE72534F230DC1B10039D467 /* RNDeviceInfo.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DA5891D81BA9A9FC002B4DB2;
+			remoteInfo = RNDeviceInfo;
+		};
+		FE72537D230DC1B20039D467 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FE72534F230DC1B10039D467 /* RNDeviceInfo.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E72EC1401F7ABB5A0001BC90;
+			remoteInfo = "RNDeviceInfo-tvOS";
+		};
 		FEBA9F8522C915B7000B1F2D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 146833FF1AC3E56700842450 /* React.xcodeproj */;
@@ -419,6 +434,7 @@
 		FE0B340822F6F7C7006DA74E /* RNCAsyncStorage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNCAsyncStorage.xcodeproj; path = "../node_modules/@react-native-community/async-storage/ios/RNCAsyncStorage.xcodeproj"; sourceTree = "<group>"; };
 		FE0F91C9230C042C003A3CF8 /* PushNotificationIOS.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PushNotificationIOS.xcodeproj; path = "../node_modules/@react-native-community/push-notification-ios/ios/PushNotificationIOS.xcodeproj"; sourceTree = "<group>"; };
 		FE0F924D230C08AB003A3CF8 /* DurusaApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = DurusaApp.entitlements; path = DurusaApp/DurusaApp.entitlements; sourceTree = "<group>"; };
+		FE72534F230DC1B10039D467 /* RNDeviceInfo.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNDeviceInfo.xcodeproj; path = "../node_modules/react-native-device-info/ios/RNDeviceInfo.xcodeproj"; sourceTree = "<group>"; };
 		FEF7216122E72EFE002B9561 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -435,6 +451,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE725384230DC1B80039D467 /* libRNDeviceInfo.a in Frameworks */,
 				FE0F91FA230C0433003A3CF8 /* libRNCPushNotificationIOS.a in Frameworks */,
 				FE0B343A22F6F7CC006DA74E /* libRNCAsyncStorage.a in Frameworks */,
 				FE089D4D22EC5B33003A3261 /* libRNReanimated.a in Frameworks */,
@@ -643,6 +660,7 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				FE72534F230DC1B10039D467 /* RNDeviceInfo.xcodeproj */,
 				FE0F91C9230C042C003A3CF8 /* PushNotificationIOS.xcodeproj */,
 				FE0B340822F6F7C7006DA74E /* RNCAsyncStorage.xcodeproj */,
 				FE089D1C22EC5B2D003A3261 /* RNReanimated.xcodeproj */,
@@ -741,6 +759,15 @@
 			isa = PBXGroup;
 			children = (
 				FE0F91CE230C042C003A3CF8 /* libRNCPushNotificationIOS.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FE725350230DC1B10039D467 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FE72537C230DC1B20039D467 /* libRNDeviceInfo.a */,
+				FE72537E230DC1B20039D467 /* libRNDeviceInfo-tvOS.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -951,6 +978,10 @@
 				{
 					ProductGroup = FE0B340922F6F7C7006DA74E /* Products */;
 					ProjectRef = FE0B340822F6F7C7006DA74E /* RNCAsyncStorage.xcodeproj */;
+				},
+				{
+					ProductGroup = FE725350230DC1B10039D467 /* Products */;
+					ProjectRef = FE72534F230DC1B10039D467 /* RNDeviceInfo.xcodeproj */;
 				},
 				{
 					ProductGroup = FEF721F322E7464C002B9561 /* Products */;
@@ -1233,6 +1264,20 @@
 			fileType = archive.ar;
 			path = libRNCPushNotificationIOS.a;
 			remoteRef = FE0F91CD230C042C003A3CF8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FE72537C230DC1B20039D467 /* libRNDeviceInfo.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNDeviceInfo.a;
+			remoteRef = FE72537B230DC1B20039D467 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FE72537E230DC1B20039D467 /* libRNDeviceInfo-tvOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libRNDeviceInfo-tvOS.a";
+			remoteRef = FE72537D230DC1B20039D467 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		FEBA9F8622C915B7000B1F2D /* libjsi.a */ = {

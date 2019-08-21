@@ -13,4 +13,11 @@ export default StyleSheet.create({
   bgImg: {
     height: metrics.screenHeight * 0.5
   },
+  appVersionContainer: {
+    position: 'absolute',
+    bottom: 15,
+    left: 0,
+    right: 0,
+    zIndex: 1
+  }
 })
