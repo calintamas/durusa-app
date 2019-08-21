@@ -164,6 +164,7 @@ dependencies {
     implementation "com.google.android.gms:play-services-base:17.0.0"
     implementation 'com.google.firebase:firebase-core:17.0.0'
     implementation "com.google.firebase:firebase-firestore:19.0.0"
+    implementation "com.google.firebase:firebase-auth:17.0.0"
 
     // Firebase push notifications
     implementation "com.google.firebase:firebase-messaging:19.0.0"

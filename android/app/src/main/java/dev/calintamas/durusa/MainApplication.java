@@ -11,6 +11,7 @@ import com.swmansion.reanimated.ReanimatedPackage;
 import io.invertase.firebase.RNFirebasePackage;
 import io.invertase.firebase.analytics.RNFirebaseAnalyticsPackage;
 import io.invertase.firebase.firestore.RNFirebaseFirestorePackage;
+import io.invertase.firebase.auth.RNFirebaseAuthPackage;
 
 import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
 
@@ -34,14 +35,15 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
-            new RNDeviceInfo(),
+          new RNDeviceInfo(),
           new ReactNativePushNotificationPackage(),
           new AsyncStoragePackage(),
           new ReanimatedPackage(),
           new RNGestureHandlerPackage(),
           new RNFirebasePackage(),
           new RNFirebaseAnalyticsPackage(),
-          new RNFirebaseFirestorePackage()
+          new RNFirebaseFirestorePackage(),
+          new RNFirebaseAuthPackage()
       );
     }
 

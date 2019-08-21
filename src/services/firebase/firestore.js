@@ -1,6 +1,15 @@
 import firebase from 'react-native-firebase'
 
 class Firestore {
+  static async signInAnonymously() {
+    try {
+      const data = await firebase.auth().signInAnonymously();
+      return data.user
+    } catch (err) {
+      return {}
+    }
+  }
+
   static getCollectionRef(collectionName = '') {
     return firebase.firestore().collection(collectionName);
   }
