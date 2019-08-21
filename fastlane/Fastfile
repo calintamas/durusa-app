@@ -22,13 +22,13 @@ platform :android do
       build_type: 'Release'
     )
 
-    supply(
-      json_key: './android/fastlane-supply-calinntamas.json',
-      track: 'alpha',
-      apk: './android/app/build/outputs/apk/release/app-release.apk',
-      package_name: app_identifier
-      # skip_upload_apk: true
-    )
+    # supply(
+    #   json_key: './android/fastlane-supply-calinntamas.json',
+    #   track: 'alpha',
+    #   apk: './android/app/build/outputs/apk/release/app-release.apk',
+    #   package_name: app_identifier
+    #   # skip_upload_apk: true
+    # )
   end
 end
 
