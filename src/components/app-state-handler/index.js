@@ -15,12 +15,10 @@ export default class AppStateHandler extends Component {
   }
 
   componentDidMount() {
-    console.log('did mount');
     AppState.addEventListener('change', this.handleAppStateChange);
   }
 
   componentWillUnmount() {
-    console.log('unmount');
     AppState.removeEventListener('change', this.handleAppStateChange);
   }
 
