@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { View, AppState } from 'react-native'
 
 import Time from '../../services/time'
+import EmailRequest from '../../services/email-request'
 import config from '../../config'
 
 export default class AppStateHandler extends Component {
@@ -27,6 +28,8 @@ export default class AppStateHandler extends Component {
       switchHour: config.switch_day_hour
     })
     this.props.setTimetableHeaderTab(festivalDayIndex)
+
+    EmailRequest.showModal(festivalDayIndex);
   }
 
   handleAppStateChange(nextAppState) {
