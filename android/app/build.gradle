@@ -105,7 +105,7 @@ android {
         applicationId "dev.calintamas.durusa"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 5
+        versionCode 7
         versionName "1.0.0"
         multiDexEnabled true // required by Firestore
     }

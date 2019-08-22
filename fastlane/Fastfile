@@ -12,7 +12,7 @@ platform :android do
     )
 
     android_set_version_code(
-      # version_code: 1, # optional, if not specified, Version Code will be incremented
+      version_code: 7, # optional, if not specified, Version Code will be incremented
       gradle_file: gradle_file
     )
 
@@ -22,13 +22,13 @@ platform :android do
       build_type: 'Release'
     )
 
-    # supply(
-    #   json_key: './android/fastlane-supply-calinntamas.json',
-    #   track: 'alpha',
-    #   apk: './android/app/build/outputs/apk/release/app-release.apk',
-    #   package_name: app_identifier
-    #   # skip_upload_apk: true
-    # )
+    supply(
+      json_key: './android/fastlane-supply-calinntamas.json',
+      track: 'alpha',
+      apk: './android/app/build/outputs/apk/release/app-release.apk',
+      package_name: app_identifier
+      # skip_upload_apk: true
+    )
   end
 end
 
@@ -48,7 +48,7 @@ platform :ios do
     )
     increment_build_number(
       xcodeproj: './ios/DurusaApp.xcodeproj',
-      # build_number: '1'
+      build_number: '7'
     )
     gym(
       workspace: './ios/DurusaApp.xcworkspace',
