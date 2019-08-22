@@ -7,12 +7,12 @@ platform :android do
   lane :beta do
     gradle_file = "./android/app/build.gradle"
     android_set_version_name(
-      version_name: "1.0.0",
+      version_name: "1.0.1",
       gradle_file: gradle_file
     )
 
     android_set_version_code(
-      version_code: 7, # optional, if not specified, Version Code will be incremented
+      version_code: 8, # optional, if not specified, Version Code will be incremented
       gradle_file: gradle_file
     )
 
@@ -44,11 +44,11 @@ platform :ios do
       # bump_type: 'patch',
       # bump_type: 'minor',
       # bump_type: 'major',
-      version_number: '1.0.0'
+      version_number: '1.0.1'
     )
     increment_build_number(
       xcodeproj: './ios/DurusaApp.xcodeproj',
-      build_number: '7'
+      build_number: '8'
     )
     gym(
       workspace: './ios/DurusaApp.xcworkspace',
@@ -64,7 +64,8 @@ platform :ios do
       ipa: "./DurusaApp.ipa",
       distribute_external: true,
       skip_submission: true,
-      skip_waiting_for_build_processing: false
+      skip_waiting_for_build_processing: false,
+      changelog: ''
     )
   end
 end
