@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native'
+import { StyleSheet } from 'react-native';
 
 const SIZE = 80;
 
@@ -8,4 +8,4 @@ export default StyleSheet.create({
     height: SIZE,
     borderRadius: 5
   }
-})
+});

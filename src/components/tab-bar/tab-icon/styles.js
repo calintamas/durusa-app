@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native'
+import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
   icon: {
@@ -12,5 +12,5 @@ export default StyleSheet.create({
     width: '100%',
     // Workaround for react-native >= 0.54 layout bug
     minWidth: 25
-  },
-})
+  }
+});

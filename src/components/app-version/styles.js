@@ -1,5 +1,5 @@
-import { StyleSheet } from 'react-native'
-import { fonts, colors } from '../../styles'
+import { StyleSheet } from 'react-native';
+import { fonts, colors } from '../../styles';
 
 export default StyleSheet.create({
   base: {
@@ -11,4 +11,4 @@ export default StyleSheet.create({
     fontSize: 10,
     color: colors.purple
   }
-})
+});

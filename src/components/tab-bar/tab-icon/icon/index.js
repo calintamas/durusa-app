@@ -1,9 +1,9 @@
-import React from 'react'
-import { Image } from 'react-native'
+import React from 'react';
+import { Image } from 'react-native';
 
-import { tabBarIcons } from '../../../../assets'
-import { toLowerCase } from '../../../../utils/string'
-import styles from './styles'
+import { tabBarIcons } from '../../../../assets';
+import { toLowerCase } from '../../../../utils/string';
+import styles from './styles';
 
 const getSource = (type = '', isFocused = false) => {
   const lowerType = toLowerCase(type);
@@ -12,16 +12,17 @@ const getSource = (type = '', isFocused = false) => {
     focused: tabBarIcons[`${lowerType}_white`]
   };
 
-  return isFocused ? src.focused : src.default
-}
+  return isFocused ? src.focused : src.default;
+};
 
 const Icon = (props) => {
   return (
     <Image
       style={styles.base}
       source={getSource(props.type, props.isFocused)}
-      resizeMode='contain' />
+      resizeMode='contain'
+    />
   );
 };
 
-export default Icon
+export default Icon;

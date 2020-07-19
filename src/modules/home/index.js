@@ -1,22 +1,28 @@
-import React, { Component } from 'react'
-import { View, Image, FlatList, ImageBackground, StatusBar } from 'react-native'
-import { SafeAreaView } from 'react-navigation'
-import { apiStateCreator } from 'reddeck'
+import React, { Component } from 'react';
+import {
+  View,
+  Image,
+  FlatList,
+  ImageBackground,
+  StatusBar
+} from 'react-native';
+import { SafeAreaView } from 'react-navigation';
+import { apiStateCreator } from 'reddeck';
 
-import NewsCard from '../../components/news-card'
-import Countdown from '../../components/countdown'
-import { images } from '../../assets'
-import { Firestore } from '../../services/firebase'
-import { setScrollViewRef } from '../../navigator/utils'
-import Time from '../../services/time'
-import config from '../../config'
-import styles from './styles'
+import NewsCard from '../../components/news-card';
+import Countdown from '../../components/countdown';
+import { images } from '../../assets';
+import { Firestore } from '../../services/firebase';
+import { setScrollViewRef } from '../../navigator/utils';
+import Time from '../../services/time';
+import config from '../../config';
+import styles from './styles';
 
 export default class Home extends Component {
   static navigationOptions = {
     title: 'Home',
     header: null
-  }
+  };
 
   constructor(props) {
     super(props);
@@ -31,12 +37,15 @@ export default class Home extends Component {
     this.state = {
       data: [],
       api: apiStateCreator({ pending: true })
-    }
+    };
   }
 
   componentDidMount() {
-    this.firestoreRef = Firestore.getCollectionRef('news').orderBy('date', 'desc');
-    this.unsubscribe = this.firestoreRef.onSnapshot(this.onCollectionUpdate)
+    this.firestoreRef = Firestore.getCollectionRef('news').orderBy(
+      'date',
+      'desc'
+    );
+    this.unsubscribe = this.firestoreRef.onSnapshot(this.onCollectionUpdate);
   }
 
   componentWillUnmount() {
@@ -44,7 +53,7 @@ export default class Home extends Component {
   }
 
   keyExtractor(item, index) {
-    return `${index}`
+    return `${index}`;
   }
 
   renderItem({ item, index }) {
@@ -53,35 +62,35 @@ export default class Home extends Component {
         title={item.title}
         text={item.text}
         date={item.date}
-        icon={item.icon} />
-    )
+        icon={item.icon}
+      />
+    );
   }
 
   renderHeader() {
     return (
       <View style={styles.headerContainer}>
-        <ImageBackground
-          style={styles.bg}
-          source={images.home_bg}>
+        <ImageBackground style={styles.bg} source={images.home_bg}>
           <Image
             style={styles.logo}
             source={images.logo}
-            resizeMode='contain' />
+            resizeMode='contain'
+          />
 
-          {
-            Time.isBeforeFestival(this.props.days)
-              ? <Countdown date={Time.getFestivalStartDate(this.props.days, { start_hour: config.festival_start_hour })} />
-              : null
-          }
+          {Time.isBeforeFestival(this.props.days) ? (
+            <Countdown
+              date={Time.getFestivalStartDate(this.props.days, {
+                start_hour: config.festival_start_hour
+              })}
+            />
+          ) : null}
         </ImageBackground>
       </View>
-    )
+    );
   }
 
   renderItemSeparator() {
-    return (
-      <View style={styles.separator} />
-    )
+    return <View style={styles.separator} />;
   }
 
   onCollectionUpdate(querySnapshot) {
@@ -104,11 +113,11 @@ export default class Home extends Component {
     this.setState({
       data,
       api: apiStateCreator({ success: true })
-    })
+    });
   }
 
   setScrollViewRef(ref) {
-    setScrollViewRef.call(this, ref, { prefix: 'Home' })
+    setScrollViewRef.call(this, ref, { prefix: 'Home' });
   }
 
   render() {
@@ -126,8 +135,9 @@ export default class Home extends Component {
           ListHeaderComponent={this.renderHeader}
           ItemSeparatorComponent={this.renderItemSeparator}
           refreshing={this.state.api.pending}
-          onRefresh={this.onRefresh} />
+          onRefresh={this.onRefresh}
+        />
       </SafeAreaView>
-    )
+    );
   }
 }

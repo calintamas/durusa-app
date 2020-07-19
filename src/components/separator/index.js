@@ -1,12 +1,10 @@
-import React from 'react'
-import { View } from 'react-native'
+import React from 'react';
+import { View } from 'react-native';
 
-import styles from './styles'
+import styles from './styles';
 
 const Separator = (props) => {
-  return (
-    <View style={styles.base} />
-  )
+  return <View style={styles.base} />;
 };
 
-export default Separator
+export default Separator;

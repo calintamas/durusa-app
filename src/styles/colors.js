@@ -14,6 +14,6 @@ const colors = {
   green: '#7AC943',
   plum: '#8B58A3',
   red: '#EB5757'
-}
+};
 
-export default colors
+export default colors;

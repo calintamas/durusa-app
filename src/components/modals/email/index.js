@@ -1,24 +1,26 @@
-import React, { Component } from 'react'
-import { View, TextInput, Image, Text } from 'react-native'
+import React, { Component } from 'react';
+import { View, TextInput, Image, Text } from 'react-native';
 
-import { icons } from '../../../assets'
-import BaseModal from '../base'
-import PrimaryButton from '../../buttons/primary'
-import CloseButton from '../../buttons/close'
-import { Firestore } from '../../../services/firebase'
-import { colors } from '../../../styles'
-import styles from './styles'
+import { icons } from '../../../assets';
+import BaseModal from '../base';
+import PrimaryButton from '../../buttons/primary';
+import CloseButton from '../../buttons/close';
+import { Firestore } from '../../../services/firebase';
+import { colors } from '../../../styles';
+import styles from './styles';
 
 const validateEmail = (email = '') => {
   // eslint-disable-next-line
-  const isEmail = new RegExp(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
-  return !!email.length && isEmail.test(email)
-}
+  const isEmail = new RegExp(
+    /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+  );
+  return !!email.length && isEmail.test(email);
+};
 
 const initialState = {
   email: '',
   error: false
-}
+};
 
 export default class EmailModal extends Component {
   static getRef() {
@@ -36,19 +38,19 @@ export default class EmailModal extends Component {
     this.onChangeText = this.onChangeText.bind(this);
     this.submit = this.submit.bind(this);
 
-    this.state = initialState
+    this.state = initialState;
   }
 
   show() {
     this.setState(initialState, () => {
       this.modalRef.show();
-    })
+    });
   }
 
   hide() {
     this.setState(initialState, () => {
       this.modalRef.hide();
-    })
+    });
   }
 
   onChangeText(text) {
@@ -70,8 +72,7 @@ export default class EmailModal extends Component {
 
   render() {
     return (
-      <BaseModal
-        ref={(ref) => this.modalRef = ref}>
+      <BaseModal ref={(ref) => (this.modalRef = ref)}>
         <View style={styles.base}>
           <View style={styles.closeButtonContainer}>
             <CloseButton onPress={this.hide} />
@@ -81,10 +82,15 @@ export default class EmailModal extends Component {
             <Image
               style={styles.icon}
               source={icons.email}
-              resizeMode='contain' />
+              resizeMode='contain'
+            />
 
-            <Text style={styles.title}>{'Get awesome content about Durușa and its friends'}</Text>
-            <Text style={styles.subtitle}>{'Join the Summer Hills community!'}</Text>
+            <Text style={styles.title}>
+              {'Get awesome content about Durușa and its friends'}
+            </Text>
+            <Text style={styles.subtitle}>
+              {'Join the Summer Hills community!'}
+            </Text>
           </View>
 
           <View style={styles.inputContainer}>
@@ -100,13 +106,12 @@ export default class EmailModal extends Component {
               onSubmitEditing={this.submit}
               underlineColorAndroid='transparent'
               autoCompleteType='email'
-              keyboardType='email-address' />
+              keyboardType='email-address'
+            />
           </View>
 
           <View style={styles.buttonContainer}>
-            <PrimaryButton
-              text='Subscribe'
-              onPress={this.submit} />
+            <PrimaryButton text='Subscribe' onPress={this.submit} />
           </View>
         </View>
       </BaseModal>

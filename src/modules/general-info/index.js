@@ -1,6 +1,6 @@
-import React from 'react'
+import React from 'react';
 
-import GeneralInfo from '../../components/general-info'
+import GeneralInfo from '../../components/general-info';
 
 const text = `
 Road Runner Society Association or Road Runner, as we like to say, is founded by a group of young people with management skills in educational and cultural areas. Since the beginning Road Runner had the mission to promote artistic and cultural experiment as a lifestyle and support sustainable and responsible development in the rural areas through activism and facilitation of economic growth.
@@ -14,15 +14,16 @@ Durușa Summer Hills Principles: //
 //• Integrating art and culture as rural development instruments.
 //• Promoting a grateful attitude towards the use of natural resources and the surroundings.
 //• Developing an active and vocal rural community.
-`
+`;
 
 const GeneralInfoWrapper = (props) => {
   return (
     <GeneralInfo
       headerTitle='General information'
       text={text}
-      navigation={props.navigation} />
-  )
+      navigation={props.navigation}
+    />
+  );
 };
 
-export default GeneralInfoWrapper
+export default GeneralInfoWrapper;

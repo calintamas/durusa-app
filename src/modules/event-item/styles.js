@@ -1,7 +1,7 @@
-import { StyleSheet } from 'react-native'
-import { ifIphoneX } from 'react-native-iphone-x-helper'
+import { StyleSheet } from 'react-native';
+import { ifIphoneX } from 'react-native-iphone-x-helper';
 
-import { colors, metrics, fonts } from '../../styles'
+import { colors, metrics, fonts } from '../../styles';
 
 export default StyleSheet.create({
   base: {
@@ -56,4 +56,4 @@ export default StyleSheet.create({
   textBlockBase: {
     paddingHorizontal: 0
   }
-})
+});

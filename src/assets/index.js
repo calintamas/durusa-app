@@ -27,12 +27,12 @@ const icons = {
   general_info_white: require('./icons/general-info-white.png'),
   map_white: require('./icons/map-white.png'),
   payment_white: require('./icons/payment-white.png')
-}
+};
 
 const images = {
   logo: require('./images/logo.png'),
   home_bg: require('./images/home-bg.png')
-}
+};
 
 const tabBarIcons = {
   home_white: require('./tab-bar-icons/home-white.png'),
@@ -40,11 +40,7 @@ const tabBarIcons = {
   timetable_white: require('./tab-bar-icons/timetable-white.png'),
   timetable_gray: require('./tab-bar-icons/timetable-gray.png'),
   menu_white: require('./tab-bar-icons/menu-white.png'),
-  menu_gray: require('./tab-bar-icons/menu-gray.png'),
-}
+  menu_gray: require('./tab-bar-icons/menu-gray.png')
+};
 
-export {
-  icons,
-  images,
-  tabBarIcons
-}
+export { icons, images, tabBarIcons };

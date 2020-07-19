@@ -1,7 +1,10 @@
-import { typeCreator } from 'reddeck'
+import { typeCreator } from 'reddeck';
 
-export default typeCreator(`
+export default typeCreator(
+  `
   GET
   GET_SUCCESS
   GET_ERROR
-`, { prefix: 'locations/' })
+`,
+  { prefix: 'locations/' }
+);

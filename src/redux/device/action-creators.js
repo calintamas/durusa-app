@@ -1,8 +1,8 @@
-import { actionCreator } from 'reddeck'
-import deviceTypes from './types'
+import { actionCreator } from 'reddeck';
+import deviceTypes from './types';
 
-const setToken = actionCreator(deviceTypes.SET_TOKEN)
+const setToken = actionCreator(deviceTypes.SET_TOKEN);
 
 export default {
   setToken
-}
+};

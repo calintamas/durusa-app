@@ -1,7 +1,7 @@
-import appAC from './action-creators'
-import locationsActions from '../locations/actions'
-import Navigation from '../../services/navigation'
-import { Firestore } from '../../services/firebase'
+import appAC from './action-creators';
+import locationsActions from '../locations/actions';
+import Navigation from '../../services/navigation';
+import { Firestore } from '../../services/firebase';
 
 const initialSetup = (navigationRef) => async (dispatch) => {
   try {
@@ -16,13 +16,13 @@ const initialSetup = (navigationRef) => async (dispatch) => {
   } catch (err) {
     dispatch(appAC.initialSetup.error(err));
   }
-}
+};
 
 const setNavigationState = (payload) => (dispatch) => {
   dispatch(appAC.setNavigationState(payload));
-}
+};
 
 export default {
   initialSetup,
   setNavigationState
-}
+};

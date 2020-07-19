@@ -1,5 +1,5 @@
-import locationsAC from './action-creators'
-import locationsAPI from '../../api/locations'
+import locationsAC from './action-creators';
+import locationsAPI from '../../api/locations';
 
 const get = () => async (dispatch) => {
   try {
@@ -11,8 +11,8 @@ const get = () => async (dispatch) => {
   } catch (err) {
     dispatch(locationsAC.get.error(err));
   }
-}
+};
 
 export default {
   get
-}
+};

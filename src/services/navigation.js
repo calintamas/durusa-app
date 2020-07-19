@@ -1,13 +1,13 @@
 class Navigation {
-  static navigation = null
+  static navigation = null;
 
   static setRef(ref = {}) {
-    this.navigation = ref
+    this.navigation = ref;
   }
 
   static getRef() {
-    return this.navigation
+    return this.navigation;
   }
 }
 
-export default Navigation
+export default Navigation;

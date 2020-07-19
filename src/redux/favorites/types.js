@@ -1,7 +1,10 @@
-import { typeCreator } from 'reddeck'
+import { typeCreator } from 'reddeck';
 
-export default typeCreator(`
+export default typeCreator(
+  `
   TOGGLE
   ADD
   REMOVE
-`, { prefix: 'favorites/' })
+`,
+  { prefix: 'favorites/' }
+);

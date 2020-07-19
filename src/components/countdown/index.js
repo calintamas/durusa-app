@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
-import { View, Text, AppState } from 'react-native'
+import React, { Component } from 'react';
+import { View, Text, AppState } from 'react-native';
 
-import Time from '../../services/time'
-import styles from './styles'
+import Time from '../../services/time';
+import styles from './styles';
 
 export default class Countdown extends Component {
   constructor(props) {
@@ -17,7 +17,7 @@ export default class Countdown extends Component {
         seconds: '00'
       },
       appState: AppState.currentState
-    }
+    };
   }
 
   componentDidMount() {
@@ -34,12 +34,12 @@ export default class Countdown extends Component {
     const countDownDate = this.props.date;
 
     if (this.interval) {
-      clearInterval(this.interval)
+      clearInterval(this.interval);
     }
 
     const initialDistToDate = Time.getDistanceToDate(countDownDate);
     if (!initialDistToDate) {
-      return
+      return;
     }
     this.setState({
       distanceToDate: initialDistToDate
@@ -53,11 +53,14 @@ export default class Countdown extends Component {
       this.setState({
         distanceToDate: distToDate
       });
-    }, 1000)
+    }, 1000);
   }
 
   handleAppStateChange(nextAppState) {
-    if (this.state.appState.match(/inactive|background/) && nextAppState === 'active') {
+    if (
+      this.state.appState.match(/inactive|background/) &&
+      nextAppState === 'active'
+    ) {
       // App has come to the foreground
       this.startInterval();
     }
@@ -65,18 +68,11 @@ export default class Countdown extends Component {
   }
 
   renderSeparator() {
-    return (
-      <Text style={styles.separator}>:</Text>
-    )
+    return <Text style={styles.separator}>:</Text>;
   }
 
   render() {
-    const {
-      days,
-      hours,
-      minutes,
-      seconds
-    } = this.state.distanceToDate;
+    const { days, hours, minutes, seconds } = this.state.distanceToDate;
 
     return (
       <View style={styles.base}>

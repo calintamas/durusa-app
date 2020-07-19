@@ -1,12 +1,12 @@
 import AsyncStorage from '@react-native-community/async-storage';
-import EmailModal from '../../components/modals/email'
+import EmailModal from '../../components/modals/email';
 
 class EmailRequest {
   static async showModal(festivalDayIndex) {
     const alreadyShown = await AsyncStorage.getItem('shown_email_modal');
-    
+
     if (alreadyShown) {
-      return
+      return;
     }
 
     if (festivalDayIndex === 2) {
@@ -16,4 +16,4 @@ class EmailRequest {
   }
 }
 
-export default EmailRequest
+export default EmailRequest;

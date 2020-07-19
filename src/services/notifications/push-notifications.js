@@ -1,22 +1,24 @@
-import PN from 'react-native-push-notification'
+import PN from 'react-native-push-notification';
 
-import config from '../../config'
-import deviceActions from '../../redux/device/actions'
-import store from '../../redux/store'
+import config from '../../config';
+import deviceActions from '../../redux/device/actions';
+import store from '../../redux/store';
 
 class PushNotifications {
   static configure() {
     PN.configure({
       // (optional) Called when Token is generated (iOS and Android)
-      onRegister: async function(token) {
-        store.dispatch(deviceActions.setToken({
-          token: token.token,
-          os: token.os
-        }));
+      onRegister: async function (token) {
+        store.dispatch(
+          deviceActions.setToken({
+            token: token.token,
+            os: token.os
+          })
+        );
       },
 
       // (required) Called when a remote or local notification is opened or received
-      onNotification: function(notification) {
+      onNotification: function (notification) {
         // required on iOS only (see fetchCompletionHandler docs: https://github.com/react-native-community/react-native-push-notification-ios)
         notification.finish('backgroundFetchResultNoData');
       },
@@ -41,7 +43,7 @@ class PushNotifications {
        * - if not, you must call PushNotificationsHandler.requestPermissions() later
        */
       requestPermissions: true
-    })
+    });
   }
 
   static scheduleNotification(payload = {}) {
@@ -74,4 +76,4 @@ class PushNotifications {
   }
 */
 
-export default PushNotifications
+export default PushNotifications;

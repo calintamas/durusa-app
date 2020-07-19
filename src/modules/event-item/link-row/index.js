@@ -1,40 +1,40 @@
-import React, { Component } from 'react'
-import { View, Image, Text, Linking, TouchableOpacity } from 'react-native'
+import React, { Component } from 'react';
+import { View, Image, Text, Linking, TouchableOpacity } from 'react-native';
 
-import { icons } from '../../../assets'
-import { colors } from '../../../styles'
-import styles from './styles'
+import { icons } from '../../../assets';
+import { colors } from '../../../styles';
+import styles from './styles';
 
 const getImgSource = (colorName = '') => {
   switch (colorName) {
     case 'berry':
-      return icons.link_berry
+      return icons.link_berry;
 
     case 'plum':
-      return icons.link_plum
+      return icons.link_plum;
 
     case 'mint':
-      return icons.link_mint
+      return icons.link_mint;
 
     case 'yellow':
-      return icons.link_yellow
+      return icons.link_yellow;
 
     case 'green':
-      return icons.link_green
+      return icons.link_green;
 
     default:
-      return icons.link_white
+      return icons.link_white;
   }
-}
+};
 
 const getTextColorStyle = (colorName = '') => {
   if (!colorName) {
-    return null
+    return null;
   }
-  return ({
+  return {
     color: colors[colorName]
-  })
-}
+  };
+};
 
 export default class LinkRow extends Component {
   constructor(props) {
@@ -49,26 +49,17 @@ export default class LinkRow extends Component {
   render() {
     const props = this.props;
 
-    const textStyle = [
-      styles.linkText,
-      getTextColorStyle(props.color)
-    ];
+    const textStyle = [styles.linkText, getTextColorStyle(props.color)];
 
     return (
       <View style={styles.base}>
         <View style={styles.imgContainer}>
-          <Image
-            style={styles.img}
-            source={getImgSource(props.color)} />
+          <Image style={styles.img} source={getImgSource(props.color)} />
         </View>
 
         <TouchableOpacity style={styles.linkContainer} onPress={this.openLink}>
-          <Text
-            style={textStyle}>
-            {props.link}
-          </Text>
+          <Text style={textStyle}>{props.link}</Text>
         </TouchableOpacity>
-
       </View>
     );
   }

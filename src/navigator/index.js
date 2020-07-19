@@ -1,7 +1,7 @@
-import { createAppContainer, createSwitchNavigator } from 'react-navigation'
+import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 
-import InitialSetup from '../modules/initial-setup/container'
-import DefaultRoutes from './routes/default'
+import InitialSetup from '../modules/initial-setup/container';
+import DefaultRoutes from './routes/default';
 
 const RootNavigator = createSwitchNavigator(
   {
@@ -17,4 +17,4 @@ const RootNavigator = createSwitchNavigator(
   }
 );
 
-export default createAppContainer(RootNavigator)
+export default createAppContainer(RootNavigator);

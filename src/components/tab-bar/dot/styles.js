@@ -1,6 +1,6 @@
-import { StyleSheet } from 'react-native'
+import { StyleSheet } from 'react-native';
 
-import { colors } from '../../../styles'
+import { colors } from '../../../styles';
 
 const SIZE = 4;
 
@@ -11,4 +11,4 @@ export default StyleSheet.create({
     borderRadius: SIZE / 2,
     backgroundColor: colors.white
   }
-})
+});

@@ -1,7 +1,7 @@
-import { StyleSheet } from 'react-native'
-import { ifIphoneX } from 'react-native-iphone-x-helper'
+import { StyleSheet } from 'react-native';
+import { ifIphoneX } from 'react-native-iphone-x-helper';
 
-import { colors } from '../../styles'
+import { colors } from '../../styles';
 
 export default StyleSheet.create({
   base: {
@@ -23,4 +23,4 @@ export default StyleSheet.create({
     right: 0,
     ...ifIphoneX({ bottom: 51 }, { bottom: 16 })
   }
-})
+});

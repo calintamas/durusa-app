@@ -1,7 +1,7 @@
 require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
 
 # Uncomment the next line to define a global platform for your project
-platform :ios, '9.0'
+platform :ios, '12.0'
 
 target 'DurusaApp' do
   # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
@@ -37,8 +37,4 @@ target 'DurusaApp' do
   # Project react-native pods
 
   # iOS pods
-  pod 'Firebase/Core', '~> 6.13.0'
-  pod 'Firebase/Analytics', '~> 6.13.0'
-  pod 'Firebase/Firestore', '~> 6.13.0'
-  pod 'Firebase/Auth', '~> 6.13.0'
 end

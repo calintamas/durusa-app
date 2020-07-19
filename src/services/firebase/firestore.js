@@ -1,12 +1,14 @@
-import firebase from 'react-native-firebase'
+// import firebase from 'react-native-firebase'
+
+const firebase = {};
 
 class Firestore {
   static async signInAnonymously() {
     try {
       const data = await firebase.auth().signInAnonymously();
-      return data.user
+      return data.user;
     } catch (err) {
-      return {}
+      return {};
     }
   }
 
@@ -19,7 +21,7 @@ class Firestore {
     const doc = await ref.get();
 
     if (doc.exists) {
-      return
+      return;
     }
 
     ref.set({ token, os });
@@ -31,4 +33,4 @@ class Firestore {
   }
 }
 
-export default Firestore
+export default Firestore;

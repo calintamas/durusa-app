@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
-import { View } from 'react-native'
+import React, { Component } from 'react';
+import { View } from 'react-native';
 
-import PushNotifications from '../../services/notifications'
+import PushNotifications from '../../services/notifications';
 
 class NotificationHandler extends Component {
   async componentDidMount() {
@@ -12,8 +12,8 @@ class NotificationHandler extends Component {
     // without this android doesn't mount the Component at all
     // eslint-disable-next-line
     const props = this.props;
-    return <View />
+    return <View />;
   }
 }
 
-export default NotificationHandler
+export default NotificationHandler;

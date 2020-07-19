@@ -1,22 +1,22 @@
-import React, { Component } from 'react'
-import { SafeAreaView } from 'react-navigation'
-import { apiStateCreator } from 'reddeck'
-import { TabView } from 'react-native-tab-view'
+import React, { Component } from 'react';
+import { SafeAreaView } from 'react-navigation';
+import { apiStateCreator } from 'reddeck';
+import { TabView } from 'react-native-tab-view';
 
-import DayContainer from './day-container'
-import HeaderTabBar from '../../components/header-tab-bar'
-import { Firestore } from '../../services/firebase'
-import { setScrollViewRef } from '../../navigator/utils'
-import { metrics } from '../../styles'
-import { isIOS } from '../../utils/platform'
-import { groupData } from './utils'
-import styles from './styles'
+import DayContainer from './day-container';
+import HeaderTabBar from '../../components/header-tab-bar';
+import { Firestore } from '../../services/firebase';
+import { setScrollViewRef } from '../../navigator/utils';
+import { metrics } from '../../styles';
+import { isIOS } from '../../utils/platform';
+import { groupData } from './utils';
+import styles from './styles';
 
 export default class Timetable extends Component {
   static navigationOptions = {
     title: 'Timetable',
     header: null
-  }
+  };
 
   constructor(props) {
     super(props);
@@ -35,12 +35,15 @@ export default class Timetable extends Component {
         day3: []
       },
       api: apiStateCreator({ pending: true })
-    }
+    };
   }
 
   componentDidMount() {
-    this.firestoreRef = Firestore.getCollectionRef('events').orderBy('start_date', 'asc');
-    this.unsubscribe = this.firestoreRef.onSnapshot(this.onCollectionUpdate)
+    this.firestoreRef = Firestore.getCollectionRef('events').orderBy(
+      'start_date',
+      'asc'
+    );
+    this.unsubscribe = this.firestoreRef.onSnapshot(this.onCollectionUpdate);
   }
 
   componentWillUnmount() {
@@ -48,7 +51,7 @@ export default class Timetable extends Component {
   }
 
   keyExtractor(item, index) {
-    return `${index}`
+    return `${index}`;
   }
 
   onCollectionUpdate(querySnapshot) {
@@ -71,24 +74,27 @@ export default class Timetable extends Component {
     this.setState({
       data: groupData(data),
       api: apiStateCreator({ success: true })
-    })
+    });
   }
 
   setScrollViewRef = (pagerIndex = '') => (ref) => {
-    setScrollViewRef.call(this, ref, { prefix: `Timetable_${pagerIndex}`, pagerIndex })
-  }
+    setScrollViewRef.call(this, ref, {
+      prefix: `Timetable_${pagerIndex}`,
+      pagerIndex
+    });
+  };
 
   renderScene({ route, jumpTo }) {
     const props = this.props;
     const data = this.state.data;
-    const locations = props.locations.data
+    const locations = props.locations.data;
 
     const defaultProps = {
       refreshing: this.state.api.pending,
       onRefresh: this.onRefresh,
       navigation: props.navigation,
       favorites: props.favorites
-    }
+    };
 
     switch (route.key) {
       case 'day1':
@@ -97,8 +103,9 @@ export default class Timetable extends Component {
             scrollViewRef={this.setScrollViewRef(0)}
             data={data['day1']}
             locations={locations}
-            {...defaultProps} />
-        )
+            {...defaultProps}
+          />
+        );
 
       case 'day2':
         return (
@@ -106,8 +113,9 @@ export default class Timetable extends Component {
             scrollViewRef={this.setScrollViewRef(1)}
             data={data['day2']}
             locations={locations}
-            {...defaultProps} />
-        )
+            {...defaultProps}
+          />
+        );
 
       case 'day3':
         return (
@@ -115,11 +123,12 @@ export default class Timetable extends Component {
             scrollViewRef={this.setScrollViewRef(2)}
             data={data['day3']}
             locations={locations}
-            {...defaultProps} />
-        )
+            {...defaultProps}
+          />
+        );
 
       default:
-        return null
+        return null;
     }
   }
 
@@ -128,11 +137,7 @@ export default class Timetable extends Component {
   }
 
   renderTabBar(selfProps) {
-    return (
-      <HeaderTabBar
-        {...selfProps}
-        onIndexChange={this.onIndexChange} />
-    )
+    return <HeaderTabBar {...selfProps} onIndexChange={this.onIndexChange} />;
   }
 
   render() {
@@ -146,9 +151,13 @@ export default class Timetable extends Component {
           navigationState={props.header}
           renderScene={this.renderScene}
           onIndexChange={this.onIndexChange}
-          initialLayout={{ width: metrics.screenWidth, height: metrics.screenHeight }}
-          renderTabBar={this.renderTabBar} />
+          initialLayout={{
+            width: metrics.screenWidth,
+            height: metrics.screenHeight
+          }}
+          renderTabBar={this.renderTabBar}
+        />
       </SafeAreaView>
-    )
+    );
   }
 }

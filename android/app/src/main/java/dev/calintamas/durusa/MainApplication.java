@@ -8,11 +8,6 @@ import com.dieam.reactnativepushnotification.ReactNativePushNotificationPackage;
 import com.reactnativecommunity.asyncstorage.AsyncStoragePackage;
 import com.swmansion.reanimated.ReanimatedPackage;
 
-import io.invertase.firebase.RNFirebasePackage;
-import io.invertase.firebase.analytics.RNFirebaseAnalyticsPackage;
-import io.invertase.firebase.firestore.RNFirebaseFirestorePackage;
-import io.invertase.firebase.auth.RNFirebaseAuthPackage;
-
 import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
 
 import com.facebook.react.ReactNativeHost;
@@ -39,11 +34,7 @@ public class MainApplication extends Application implements ReactApplication {
           new ReactNativePushNotificationPackage(),
           new AsyncStoragePackage(),
           new ReanimatedPackage(),
-          new RNGestureHandlerPackage(),
-          new RNFirebasePackage(),
-          new RNFirebaseAnalyticsPackage(),
-          new RNFirebaseFirestorePackage(),
-          new RNFirebaseAuthPackage()
+          new RNGestureHandlerPackage()
       );
     }
 

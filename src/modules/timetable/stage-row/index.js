@@ -1,9 +1,9 @@
-import React, { Component } from 'react'
-import { View, FlatList, Text } from 'react-native'
+import React, { Component } from 'react';
+import { View, FlatList, Text } from 'react-native';
 
-import EventCard from '../../../components/event-card'
-import ActivityEventCard from '../../../components/activity-event-card'
-import styles from './styles'
+import EventCard from '../../../components/event-card';
+import ActivityEventCard from '../../../components/activity-event-card';
+import styles from './styles';
 
 export default class StageRow extends Component {
   constructor(props) {
@@ -13,7 +13,7 @@ export default class StageRow extends Component {
   }
 
   keyExtractor(item, index) {
-    return `${index}`
+    return `${index}`;
   }
 
   goToEventItem(data) {
@@ -21,36 +21,34 @@ export default class StageRow extends Component {
   }
 
   renderItem({ item }) {
-    const EventCardComponent = this.props.isVertical ? ActivityEventCard : EventCard;
+    const EventCardComponent = this.props.isVertical
+      ? ActivityEventCard
+      : EventCard;
     const isFavorited = this.props.favorites.indexOf(item.id) >= 0;
     return (
       <EventCardComponent
         data={item}
         isFavorited={isFavorited}
-        onPress={() => this.goToEventItem({ ...item, location: this.props.title })} />
-    )
+        onPress={() =>
+          this.goToEventItem({ ...item, location: this.props.title })
+        }
+      />
+    );
   }
 
   renderListFooterComponent() {
     // Render a right margin for the last item in the list
-    return (
-      <View style={styles.lastItemMargin} />
-    )
+    return <View style={styles.lastItemMargin} />;
   }
 
   renderItemSeparator() {
-    return (
-      <View style={styles.separator} />
-    )
+    return <View style={styles.separator} />;
   }
 
   render() {
     const { data, title, isVertical, isLast, favorites } = this.props;
 
-    const baseStyle = [
-      styles.base,
-      isLast && styles.lastItem
-    ];
+    const baseStyle = [styles.base, isLast && styles.lastItem];
 
     return (
       <View style={baseStyle}>
@@ -66,7 +64,8 @@ export default class StageRow extends Component {
           extraData={favorites}
           renderItem={this.renderItem}
           ItemSeparatorComponent={this.renderItemSeparator}
-          ListFooterComponent={this.renderListFooterComponent} />
+          ListFooterComponent={this.renderListFooterComponent}
+        />
       </View>
     );
   }

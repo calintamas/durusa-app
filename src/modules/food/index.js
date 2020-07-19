@@ -1,6 +1,6 @@
-import React from 'react'
+import React from 'react';
 
-import GeneralInfo from '../../components/general-info'
+import GeneralInfo from '../../components/general-info';
 
 const text = `Drinks //
 // Fresh cocktails, disco shots and frosty beverages. The menu is completed with a Maramureș traditional list of local spirits and refreshers. We have prepared a fine selection of soft and alcoholic drinks, at the usual affordable price, for a great party. Alcoholic drinks will not be served to under 18. //
@@ -19,8 +19,9 @@ const Food = (props) => {
     <GeneralInfo
       headerTitle='Food & Drinks'
       text={text}
-      navigation={props.navigation} />
-  )
+      navigation={props.navigation}
+    />
+  );
 };
 
-export default Food
+export default Food;

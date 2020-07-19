@@ -1,15 +1,16 @@
-import React from 'react'
+import React from 'react';
 
-import IconButton from '../icon'
-import { icons } from '../../../assets'
+import IconButton from '../icon';
+import { icons } from '../../../assets';
 
 const BackButton = (props) => {
   return (
     <IconButton
       style={props.style}
       onPress={props.onPress}
-      icon={icons.left_arrow_white} />
-  )
+      icon={icons.left_arrow_white}
+    />
+  );
 };
 
-export default BackButton
+export default BackButton;

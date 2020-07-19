@@ -1,6 +1,6 @@
 /* eslint-env jest */
 
-import Time from '../index'
+import Time from '../index';
 
 const days = [
   { date: '2019-08-23' },
@@ -16,7 +16,7 @@ describe('Time service', () => {
           days,
           options: {
             now: '2019-08-23T08:00:00'
-          },
+          }
         },
         output: 0
       },
@@ -25,7 +25,7 @@ describe('Time service', () => {
           days,
           options: {
             now: '2019-08-24T12:00:00'
-          },
+          }
         },
         output: 1
       },
@@ -35,7 +35,7 @@ describe('Time service', () => {
           options: {
             now: '2019-08-24T07:00:00',
             switchHour: 8
-          },
+          }
         },
         output: 0
       },
@@ -45,7 +45,7 @@ describe('Time service', () => {
           options: {
             now: '2019-08-24T12:00:00',
             switchHour: 10
-          },
+          }
         },
         output: 1
       },
@@ -54,7 +54,7 @@ describe('Time service', () => {
           days,
           options: {
             now: '2019-08-20T12:00:00'
-          },
+          }
         },
         output: 0
       },
@@ -63,19 +63,19 @@ describe('Time service', () => {
           days,
           options: {
             now: '2019-08-29T12:00:00'
-          },
+          }
         },
         output: 0
       },
       {
         input: {
-          days: [],
+          days: []
         },
         output: 0
       },
       {
         input: {
-          days: null,
+          days: null
         },
         output: 0
       }
@@ -83,8 +83,8 @@ describe('Time service', () => {
     tests.forEach((item) => {
       expect(
         Time.getCurrentFestivalDayIndex(item.input.days, item.input.options)
-      ).toBe(item.output)
-    })
+      ).toBe(item.output);
+    });
   });
 
   it('Returns true if today is a festival day', () => {
@@ -94,7 +94,7 @@ describe('Time service', () => {
           days,
           options: {
             now: '2019-08-23T12:00:00'
-          },
+          }
         },
         output: true
       },
@@ -103,7 +103,7 @@ describe('Time service', () => {
           days,
           options: {
             now: '2019-08-29T08:00:00'
-          },
+          }
         },
         output: false
       },
@@ -112,7 +112,7 @@ describe('Time service', () => {
           days: null,
           options: {
             now: '2019-08-23T08:00:00'
-          },
+          }
         },
         output: false
       },
@@ -121,17 +121,17 @@ describe('Time service', () => {
           days,
           options: {
             now: null
-          },
+          }
         },
         output: false
-      },
+      }
     ];
     tests.forEach((item) => {
-      expect(
-        Time.isFestivalDay(item.input.days, item.input.options)
-      ).toBe(item.output)
-    })
-  })
+      expect(Time.isFestivalDay(item.input.days, item.input.options)).toBe(
+        item.output
+      );
+    });
+  });
 
   it('Returns true if today is before festival', () => {
     const tests = [
@@ -140,7 +140,7 @@ describe('Time service', () => {
           days,
           options: {
             now: '2019-08-20T08:00:00'
-          },
+          }
         },
         output: true
       },
@@ -149,7 +149,7 @@ describe('Time service', () => {
           days,
           options: {
             now: '2019-08-29T08:00:00'
-          },
+          }
         },
         output: false
       },
@@ -158,7 +158,7 @@ describe('Time service', () => {
           days: null,
           options: {
             now: '2019-08-23T08:00:00'
-          },
+          }
         },
         output: false
       },
@@ -167,15 +167,15 @@ describe('Time service', () => {
           days,
           options: {
             now: null
-          },
+          }
         },
         output: false
-      },
+      }
     ];
     tests.forEach((item) => {
-      expect(
-        Time.isFestivalDay(item.input.days, item.input.options)
-      ).toBe(item.output)
-    })
-  })
-})
+      expect(Time.isFestivalDay(item.input.days, item.input.options)).toBe(
+        item.output
+      );
+    });
+  });
+});

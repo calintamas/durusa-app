@@ -1,15 +1,16 @@
-import React from 'react'
+import React from 'react';
 
-import IconButton from '../icon'
-import { icons } from '../../../assets'
+import IconButton from '../icon';
+import { icons } from '../../../assets';
 
 const CloseButton = (props) => {
   return (
     <IconButton
       style={props.style}
       onPress={props.onPress}
-      icon={icons.close_rounded} />
-  )
+      icon={icons.close_rounded}
+    />
+  );
 };
 
-export default CloseButton
+export default CloseButton;

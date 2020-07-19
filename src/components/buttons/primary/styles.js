@@ -1,5 +1,5 @@
-import { StyleSheet } from 'react-native'
-import { fonts, colors } from '../../../styles'
+import { StyleSheet } from 'react-native';
+import { fonts, colors } from '../../../styles';
 
 export default StyleSheet.create({
   base: {
@@ -17,4 +17,4 @@ export default StyleSheet.create({
     textTransform: 'uppercase',
     color: colors.white
   }
-})
+});

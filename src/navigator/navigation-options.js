@@ -1,32 +1,37 @@
-import React from 'react'
+import React from 'react';
 
-import BackButton from '../components/buttons/back'
-import CloseButton from '../components/buttons/close'
-import { colors } from '../styles'
+import BackButton from '../components/buttons/back';
+import CloseButton from '../components/buttons/close';
+import { colors } from '../styles';
 
 const HeaderLeft = (props) => {
-  return (
-    props.iconType === 'close'
-      ? <CloseButton {...props} />
-      : <BackButton {...props} />
-  )
+  return props.iconType === 'close' ? (
+    <CloseButton {...props} />
+  ) : (
+    <BackButton {...props} />
+  );
 };
 
-const getDefaultNavigationOptions = ({ navigation, headerLeftIconType = 'back', headerLeftOnPress = null }) => {
+const getDefaultNavigationOptions = ({
+  navigation,
+  headerLeftIconType = 'back',
+  headerLeftOnPress = null
+}) => {
   const headerLeft = (
     <HeaderLeft
       onPress={() => {
         if (headerLeftOnPress) {
           headerLeftOnPress();
         }
-        navigation.pop()
+        navigation.pop();
       }}
-      iconType={headerLeftIconType} />
+      iconType={headerLeftIconType}
+    />
   );
 
-  return ({
+  return {
     cardStyle: {
-      shadowColor: 'transparent',
+      shadowColor: 'transparent'
     },
     headerStyle: {
       backgroundColor: colors.darkPurple,
@@ -36,9 +41,7 @@ const getDefaultNavigationOptions = ({ navigation, headerLeftIconType = 'back', 
       shadowColor: 'transparent'
     },
     headerLeft
-  })
+  };
 };
 
-export {
-  getDefaultNavigationOptions
-}
+export { getDefaultNavigationOptions };

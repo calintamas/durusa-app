@@ -1,5 +1,5 @@
-import { StyleSheet } from 'react-native'
-import { colors } from '../../../styles'
+import { StyleSheet } from 'react-native';
+import { colors } from '../../../styles';
 
 const SIZE = 60;
 
@@ -19,4 +19,4 @@ export default StyleSheet.create({
   img: {
     flex: 1
   }
-})
+});

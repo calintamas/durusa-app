@@ -1,5 +1,8 @@
-import { typeCreator } from 'reddeck'
+import { typeCreator } from 'reddeck';
 
-export default typeCreator(`
+export default typeCreator(
+  `
   SET_TOKEN
-`, { prefix: 'device/' })
+`,
+  { prefix: 'device/' }
+);

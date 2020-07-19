@@ -1,19 +1,19 @@
-import React, { Component } from 'react'
-import { View, ScrollView, Image, Text } from 'react-native'
+import React, { Component } from 'react';
+import { View, ScrollView, Image, Text } from 'react-native';
 
-import BackButton from '../../components/buttons/back'
-import LinkRow from './link-row'
-import HeartButton from './heart-button'
-import Time from '../../services/time'
-import TextBlock from '../../components/text-block'
-import styles from './styles'
+import BackButton from '../../components/buttons/back';
+import LinkRow from './link-row';
+import HeartButton from './heart-button';
+import Time from '../../services/time';
+import TextBlock from '../../components/text-block';
+import styles from './styles';
 
 const getDateText = (date, location) => {
   if (location !== 'Activities') {
-    return `${date} @ ${location}`
+    return `${date} @ ${location}`;
   }
-  return `${date}`
-}
+  return `${date}`;
+};
 
 export default class EventItem extends Component {
   constructor(props) {
@@ -31,7 +31,7 @@ export default class EventItem extends Component {
       color: '',
       location: '',
       web_url: []
-    }
+    };
   }
 
   componentDidMount() {
@@ -65,34 +65,32 @@ export default class EventItem extends Component {
             <Image
               style={styles.img}
               source={state.photo_url ? { uri: state.photo_url } : null}
-              resizeMode='cover' />
+              resizeMode='cover'
+            />
           </View>
 
           <View style={styles.heartButtonContainer}>
             <HeartButton
               color={state.color}
               isActive={isFavorited}
-              onPress={this.toggleFavorite} />
+              onPress={this.toggleFavorite}
+            />
           </View>
 
           <View style={styles.contentContainer}>
             <Text style={styles.titleText}>{state.name}</Text>
-            <Text style={styles.dateText}>{getDateText(date, state.location)}</Text>
+            <Text style={styles.dateText}>
+              {getDateText(date, state.location)}
+            </Text>
 
             <TextBlock
               text={state.description}
-              baseStyle={styles.textBlockBase} />
+              baseStyle={styles.textBlockBase}
+            />
 
-            {
-              state.web_url.map((link, index) => {
-                return (
-                  <LinkRow
-                    key={index}
-                    color={state.color}
-                    link={link} />
-                )
-              })
-            }
+            {state.web_url.map((link, index) => {
+              return <LinkRow key={index} color={state.color} link={link} />;
+            })}
           </View>
         </ScrollView>
       </View>

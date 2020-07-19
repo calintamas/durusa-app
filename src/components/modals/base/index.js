@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
-import { View, Modal } from 'react-native'
+import React, { Component } from 'react';
+import { View, Modal } from 'react-native';
 
-import styles from './styles'
+import styles from './styles';
 
 export default class BaseModal extends Component {
   constructor(props) {
@@ -32,9 +32,7 @@ export default class BaseModal extends Component {
         visible={this.state.isVisible}
         onShow={this.props.onShow}
         onRequestClose={this.closeModal}>
-        <View style={styles.base}>
-          {this.props.children}
-        </View>
+        <View style={styles.base}>{this.props.children}</View>
       </Modal>
     );
   }

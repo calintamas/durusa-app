@@ -1,5 +1,5 @@
-import { StyleSheet } from 'react-native'
-import { colors, metrics } from '../../styles'
+import { StyleSheet } from 'react-native';
+import { colors, metrics } from '../../styles';
 
 export default StyleSheet.create({
   base: {
@@ -24,4 +24,4 @@ export default StyleSheet.create({
     width: 48,
     height: 48
   }
-})
+});

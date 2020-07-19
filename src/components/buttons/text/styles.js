@@ -1,5 +1,5 @@
-import { StyleSheet } from 'react-native'
-import { colors } from '../../../styles'
+import { StyleSheet } from 'react-native';
+import { colors } from '../../../styles';
 
 export default StyleSheet.create({
   base: {
@@ -20,4 +20,4 @@ export default StyleSheet.create({
     height: 10,
     marginRight: 5
   }
-})
+});

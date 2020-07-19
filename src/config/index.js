@@ -1,4 +1,4 @@
-import env from '../../env.json'
+import env from '../../env.json';
 
 const config = {
   days: [
@@ -22,6 +22,6 @@ const config = {
   festival_start_hour: 12,
 
   firebase_sender_id: env.FIREBASE_SENDER_ID
-}
+};
 
-export default config
+export default config;

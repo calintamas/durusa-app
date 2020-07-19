@@ -1,8 +1,8 @@
-import React from 'react'
-import { View, TouchableOpacity, Image, Text } from 'react-native'
+import React from 'react';
+import { View, TouchableOpacity, Image, Text } from 'react-native';
 
-import { icons } from '../../assets'
-import styles from './styles'
+import { icons } from '../../assets';
+import styles from './styles';
 
 const Header = (props) => {
   return (
@@ -14,19 +14,17 @@ const Header = (props) => {
         <Image
           source={props.leftIcon || icons.left_arrow_white}
           style={[styles.img, props.iconStyle]}
-          resizeMode='contain' />
+          resizeMode='contain'
+        />
       </TouchableOpacity>
 
       <View style={styles.titleContainer}>
-        <Text
-          style={styles.title}
-          numberOfLines={1}
-          ellipsizeMode='tail'>
+        <Text style={styles.title} numberOfLines={1} ellipsizeMode='tail'>
           {props.title}
         </Text>
       </View>
     </View>
-  )
+  );
 };
 
-export default Header
+export default Header;

@@ -154,17 +154,12 @@ dependencies {
     implementation project(':react-native-push-notification')
     implementation project(':@react-native-community_async-storage')
     implementation project(':react-native-reanimated')
-    implementation project(':react-native-firebase')
     implementation project(':react-native-gesture-handler')
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation 'androidx.appcompat:appcompat:1.0.0'
     implementation "com.facebook.react:react-native:+"  // From node_modules
 
     // Firebase
-    implementation "com.google.android.gms:play-services-base:17.0.0"
-    implementation 'com.google.firebase:firebase-core:17.0.0'
-    implementation "com.google.firebase:firebase-firestore:19.0.0"
-    implementation "com.google.firebase:firebase-auth:17.0.0"
 
     // Firebase push notifications
     implementation "com.google.firebase:firebase-messaging:19.0.0"

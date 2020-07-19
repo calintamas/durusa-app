@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
-import { Animated } from 'react-native'
+import React, { Component } from 'react';
+import { Animated } from 'react-native';
 
-import { metrics } from '../../../styles'
-import styles from './styles'
+import { metrics } from '../../../styles';
+import styles from './styles';
 
 const tabWidth = metrics.screenWidth / 3;
 const positions = [
@@ -16,7 +16,7 @@ export default class Dot extends Component {
     super(props);
     this.state = {
       leftValue: new Animated.Value(props.activeRouteIndex)
-    }
+    };
   }
 
   componentDidUpdate(prevProps) {
@@ -25,41 +25,39 @@ export default class Dot extends Component {
     if (activeRouteIndex !== prevActiveRouteIndex) {
       this.animate({
         toValue: activeRouteIndex
-      })
+      });
     }
   }
 
   animate({ toValue }) {
     return new Promise((resolve) => {
-      Animated
-        .spring(this.state.leftValue, {
-          toValue,
-          bounciness: 5,
-          useNativeDriver: true
-        })
-        .start(resolve)
-    })
+      Animated.spring(this.state.leftValue, {
+        toValue,
+        bounciness: 5,
+        useNativeDriver: true
+      }).start(resolve);
+    });
   }
 
   getLeftValue() {
     return this.state.leftValue.interpolate({
       inputRange: [0, 1, 2],
       outputRange: positions
-    })
+    });
   }
 
   render() {
     const baseStyle = [
       styles.base,
       {
-        transform: [{
-          translateX: this.getLeftValue()
-        }]
+        transform: [
+          {
+            translateX: this.getLeftValue()
+          }
+        ]
       }
     ];
 
-    return (
-      <Animated.View style={baseStyle} />
-    );
+    return <Animated.View style={baseStyle} />;
   }
 }

@@ -1,3 +1,3 @@
-import PushNotifications from './push-notifications'
+import PushNotifications from './push-notifications';
 
-export default PushNotifications
+export default PushNotifications;

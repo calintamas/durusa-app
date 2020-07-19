@@ -1,6 +1,6 @@
-import React from 'react'
+import React from 'react';
 
-import GeneralInfo from '../../components/general-info'
+import GeneralInfo from '../../components/general-info';
 
 const text = `PLAYGROUND | CAMPING | SHOWERS | TOILETS | //
 //
@@ -13,15 +13,16 @@ We recommend a responsible attitude towards the environment, surroundings and fe
 Keep it green, keep it clean! Use the garbage bins for keeping it clean and if you need extra trash bags, ask our team and we will help you with this. //
 //
 Campfire is forbidden in the camping area.
-`
+`;
 
 const Camping = (props) => {
   return (
     <GeneralInfo
       headerTitle='Camping'
       text={text}
-      navigation={props.navigation} />
-  )
+      navigation={props.navigation}
+    />
+  );
 };
 
-export default Camping
+export default Camping;

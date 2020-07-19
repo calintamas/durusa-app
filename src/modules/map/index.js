@@ -1,6 +1,6 @@
-import React from 'react'
+import React from 'react';
 
-import GeneralInfo from '../../components/general-info'
+import GeneralInfo from '../../components/general-info';
 
 const text = `Location: Durusa, com. Valea Chioarului, jud. Maramures, CP 437372, Romania //
 // BY BUS //
@@ -20,15 +20,16 @@ Closest train station is in Ileanda, 22 km away from the festival. //
 Closest airports are located in Cluj-Napoca (120km away) and in Baia Mare (33 km away from Durusa). //
 // PARKING //
 The parking in the village is free, but if you want to park your car closer to the festival you will need special access. You can buy the parking access for uphill from the ticket checkpoint!
-`
+`;
 
 const Map = (props) => {
   return (
     <GeneralInfo
       headerTitle='How to get to Durusa'
       text={text}
-      navigation={props.navigation} />
-  )
+      navigation={props.navigation}
+    />
+  );
 };
 
-export default Map
+export default Map;

@@ -1,9 +1,9 @@
-import React, { Component } from 'react'
-import { View, AppState } from 'react-native'
+import React, { Component } from 'react';
+import { View, AppState } from 'react-native';
 
-import Time from '../../services/time'
-import EmailRequest from '../../services/email-request'
-import config from '../../config'
+import Time from '../../services/time';
+import EmailRequest from '../../services/email-request';
+import config from '../../config';
 
 export default class AppStateHandler extends Component {
   constructor(props) {
@@ -12,7 +12,7 @@ export default class AppStateHandler extends Component {
 
     this.state = {
       appState: AppState.currentState
-    }
+    };
   }
 
   componentDidMount() {
@@ -26,14 +26,17 @@ export default class AppStateHandler extends Component {
   onWake() {
     const festivalDayIndex = Time.getCurrentFestivalDayIndex(config.days, {
       switchHour: config.switch_day_hour
-    })
-    this.props.setTimetableHeaderTab(festivalDayIndex)
+    });
+    this.props.setTimetableHeaderTab(festivalDayIndex);
 
     EmailRequest.showModal(festivalDayIndex);
   }
 
   handleAppStateChange(nextAppState) {
-    if (this.state.appState.match(/inactive|background/) && nextAppState === 'active') {
+    if (
+      this.state.appState.match(/inactive|background/) &&
+      nextAppState === 'active'
+    ) {
       // App has come to the foreground
       this.onWake();
     }
@@ -44,6 +47,6 @@ export default class AppStateHandler extends Component {
     // without this android doesn't mount the Component at all
     // eslint-disable-next-line
     const props = this.props;
-    return <View />
+    return <View />;
   }
 }

@@ -1,19 +1,17 @@
 {
-  "name": "DurusaApp",
-  "version": "0.0.1",
+  "name": "durusa-app",
   "private": true,
   "scripts": {
     "start": "react-native start",
-    "test": "jest",
-    "lint": "eslint src",
-    "lint-staged": "lint-staged",
+    "test": "./node_modules/.bin/jest",
+    "lint": "./node_modules/.bin/eslint . --ext=jsx --ext=js",
+    "lint-staged": "./node_modules/.bin/lint-staged",
     "menu": "adb shell input keyevent KEYCODE_MENU",
     "postinstall": "npx jetify"
   },
   "lint-staged": {
     "**/*.js": [
-      "eslint",
-      "git add"
+      "./node_modules/.bin/prettier --write"
     ]
   },
   "husky": {
@@ -29,7 +27,6 @@
     "react-native": "0.60.0",
     "react-native-cachemere": "^1.0.0",
     "react-native-device-info": "^2.3.2",
-    "react-native-firebase": "5.6.0",
     "react-native-gesture-handler": "^1.3.0",
     "react-native-iphone-x-helper": "^1.2.1",
     "react-native-push-notification": "^3.1.9",
@@ -47,17 +44,18 @@
     "@babel/runtime": "7.5.5",
     "babel-eslint": "^10.0.2",
     "babel-jest": "24.8.0",
-    "eslint": "^6.0.1",
-    "eslint-config-airbnb": "^17.1.0",
-    "eslint-plugin-import": "^2.18.0",
-    "eslint-plugin-jsx-a11y": "^6.2.2",
-    "eslint-plugin-react": "^7.14.2",
-    "eslint-plugin-react-native": "^3.7.0",
-    "husky": "^2.7.0",
-    "jest": "24.8.0",
-    "jetifier": "^1.6.3",
-    "lint-staged": "^8.2.1",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.1.0",
+    "eslint-config-prettier": "^6.10.1",
+    "eslint-plugin-import": "2.20.2",
+    "eslint-plugin-jsx-a11y": "6.2.3",
+    "eslint-plugin-react": "7.20.3",
+    "eslint-plugin-react-hooks": "^2.5.1",
+    "husky": "3.1.0",
+    "jest": "^26.0.0",
+    "lint-staged": "^10.0.8",
     "metro-react-native-babel-preset": "^0.55.0",
+    "prettier": "2.0.5",
     "react-test-renderer": "16.8.6",
     "redux-logger": "^3.0.6"
   },

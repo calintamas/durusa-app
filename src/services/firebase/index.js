@@ -1,5 +1,3 @@
-import Firestore from './firestore'
+import Firestore from './firestore';
 
-export {
-  Firestore
-}
+export { Firestore };
