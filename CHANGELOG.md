@@ -18,3 +18,7 @@ Headers are one of:
 ## Added
 
 - `Technical` Added `prettier`
+
+## Changed
+
+- `Firebase` Upgrade `react-native-firebase` to `v8.2.0`

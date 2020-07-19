@@ -1,11 +1,10 @@
-// import firebase from 'react-native-firebase'
-
-const firebase = {};
+import auth from '@react-native-firebase/auth';
+import firestore from '@react-native-firebase/firestore';
 
 class Firestore {
   static async signInAnonymously() {
     try {
-      const data = await firebase.auth().signInAnonymously();
+      const data = await auth().signInAnonymously();
       return data.user;
     } catch (err) {
       return {};
@@ -13,7 +12,7 @@ class Firestore {
   }
 
   static getCollectionRef(collectionName = '') {
-    return firebase.firestore().collection(collectionName);
+    return firestore().collection(collectionName);
   }
 
   static async saveDeviceToken({ token, os }) {
