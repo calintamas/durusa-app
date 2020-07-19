@@ -21,4 +21,5 @@ Headers are one of:
 
 ## Changed
 
+- `React-Native` Upgrade `react-native` to `v0.60.0`
 - `Firebase` Upgrade `react-native-firebase` to `v8.2.0`
